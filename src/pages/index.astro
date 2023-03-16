@@ -3,79 +3,70 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Fer Gutierrez Makeup">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<article class="bg-gray-100 py-20">
+			<div class="flex justify-center items-center gap-12 max-w-6xl mx-auto lg:flex-row flex-col">
+				<img class="w-full sm:w-4/6 md:w-1/2" src="/perfil.png" />
+				<div class="text-left md:w-1/2">
+					<h1 class="text-4xl text-gray-700 font-light mb-8">Soy Fernanda Gutiérrez</h1>
+					<p class="break-words text-gray-600 mb-4 font-extralight">Nací en Bs As argentina. Soy maquilladora desde hace 20 años, me recibí en Mulet Estudio. Me perfeccioné con Mabby Autino, Sebastián Correa, Vero Fioravanti , Bettina Frumboli y Vero Luna.</p>
+					<p class="break-words text-gray-600 mb-4 font-extralight">Actualmente vivo en Tandil donde tengo mi estudio y brindo servicios de maquillaje social y dicto cursos.</p>
+					<p class="break-words text-gray-600 mb-4 font-extralight">Tengo un estilo natural que se ve reflejado en mis trabajos, adapto las tendencias de la moda buscando resaltar la belleza.</p>
+				</div>
+			</div>
+		</article>
+
+		<section class="py-16">
+			<h2 class="uppercase text-3xl text-gray-700 font-light text-center">Marcas que utilizamos</h2>
+			<div class="flex justify-evenly my-12">
+				<img src="/brands/clinique.svg" class="w-48" />
+				<img src="/brands/dior.svg" class="w-48" />
+				<img src="/brands/lancome.svg" class="w-48" />
+				<img src="/brands/loreal.svg" class="w-48" />
+				<img src="/brands/mac.png" class="w-48" />
+				<img src="/brands/maybelline.svg" class="w-48" />
+			</div>
+		</section>
+
+		<section class="py-16 bg-gray-100">
+			<h3 class="text-3xl text-gray-700 font-light text-center mb-16 border-b-2 border-gray-300 w-fit mx-auto">Portfolio</h3>
+			<div class="w-full lg:max-w-6xl mx-auto columns-1 lg:columns-3">
+				<img class="mb-4 w-full" src="/portfolio/1.jpg" />
+				<img class="mb-4 w-full" src="/portfolio/2.jpg" />
+				<img class="mb-4 w-full" src="/portfolio/3.jpg" />
+				<img class="mb-4 w-full" src="/portfolio/4.jpg" />
+				<img class="mb-4 w-full" src="/portfolio/5.jpg" />
+				<img class="mb-4 w-full" src="/portfolio/6.jpg" />
+			</div>
+		</section>
+
+		<section class="py-16">
+			<div class="flex justify-center items-center gap-12 max-w-6xl mx-auto lg:flex-row flex-col">
+				<div class="w-full sm:w-4/6 md:w-1/2 grid grid-cols-2 gap-4">
+					<div class="aspect-square overflow-hidden">
+						<img class="w-full" src="/services/1.jpg" />
+					</div>
+					<div class="aspect-square overflow-hidden">
+						<img class="w-full -mt-10" src="/services/2.jpg" />
+					</div>
+					<div class="aspect-square overflow-hidden">
+						<img class="w-full" src="/services/3.jpg" />
+					</div>
+					<div class="aspect-square overflow-hidden">
+						<img class="w-full -mt-10" src="/services/4.jpg" />
+					</div>
+				</div>
+				<div class="text-left md:w-1/2">
+					<h1 class="text-3xl text-gray-700 font-extralight mb-8">Servicios</h1>
+					<p class="break-words text-gray-600 mb-4 font-extralight">Los servicios pueden ser en el estudio o a domicilio. Tienen distintos honorarios.</p>
+					<p class="break-words text-gray-600 mb-4 font-extralight">En el caso del servicio de maquillaje para eventos, se deben señar 15 días antes, para reservar el turno.</p>
+					<p class="break-words text-gray-600 mb-4 font-extralight">En el caso de novias y madrinas 1 mes antes como mínimo.</p>
+					<p class="break-words text-gray-600 mb-4 font-extralight">No incluye colocación de pestañas postizas.</p>
+
+					<a href="/servicios" class="uppercase bg-[#E3BBBC] font-extralight py-2 px-8 rounded-md inline-block mt-6 hover:scale-110 transition-all duration-300">Más Info</a>
+				</div>
+			</div>
+		</section>
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
