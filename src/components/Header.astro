@@ -5,12 +5,14 @@ import MenuLink from "./MenuLink.astro";
 
 <header>
     <section class="bg-[#e6c4c3] w-full flex justify-center items-center py-12">
-      <img class="max-w-[300px]" src="/logo.svg" />
+      <a href="/" class="contents">
+        <img class="max-w-[300px]" src="/logo.svg" />
+      </a>
     </section>
 
     <nav class="flex justify-center gap-8 py-4">
-      <MenuLink href="/">Inicio</MenuLink>
       <MenuLink href="/servicios">Servicios</MenuLink>
+      <MenuLink href="/servicios">Cursos</MenuLink>
       <MenuLink href="/contacto">Contacto</MenuLink>
     </nav>
 </header>
