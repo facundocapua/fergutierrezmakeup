@@ -1,0 +1,41 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import { SERVICES } from '@/data/services';
+import { BRANDS } from '@/data/brands';
+---
+
+<Layout title="Servicios">
+	<main>
+    <SectionTitle title="Servicios" />
+
+		<section class="max-w-6xl mx-auto my-16">
+      <div class="grid grid-cols-4 gap-8">
+        {SERVICES.map((service) => (
+          <ServiceCard
+            image={service.image}
+            title={service.title}
+            link={service.link}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-100">
+			<div class="flex justify-center items-center gap-12 max-w-6xl mx-auto lg:flex-row flex-col">
+				<div class="text-left md:w-1/2 ml-10">
+					<h3>Nuestro secreto</h3>
+          <h2 class="text-3xl text-gray-700 font-extralight mb-8">Sobre los productos utilizados</h2>
+					<p class="break-words text-gray-600 mb-4 font-extralight">Utilizamos marcas de primera linea, los cuales son desarrollados con materias prima de excelencia.</p>
+          <p class="break-words text-gray-600 mb-4 font-extralight">De esta forma podemos garantizar los mejores resultados.</p>
+				</div>
+				<div class="w-full sm:w-4/6 md:w-1/2 grid grid-cols-3 gap-4 items-center">
+          {BRANDS.map(({name, image}) => (
+            <img title={name} alt={name} src={image} class="w-36" />
+          ))}
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

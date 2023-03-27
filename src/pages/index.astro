@@ -1,5 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import { BRANDS } from '@/data/brands';
 ---
 
 <Layout title="Fer Gutierrez Makeup">
@@ -19,12 +20,9 @@ import Layout from '../layouts/Layout.astro';
 		<section class="py-16">
 			<h2 class="uppercase text-3xl text-gray-700 font-light text-center">Marcas que utilizamos</h2>
 			<div class="flex justify-evenly my-12">
-				<img src="/brands/clinique.svg" class="w-48" />
-				<img src="/brands/dior.svg" class="w-48" />
-				<img src="/brands/lancome.svg" class="w-48" />
-				<img src="/brands/loreal.svg" class="w-48" />
-				<img src="/brands/mac.png" class="w-48" />
-				<img src="/brands/maybelline.svg" class="w-48" />
+				{BRANDS.map(({name, image}) => (
+					<img title={name} alt={name} src={image} class="w-48" />
+				))}
 			</div>
 		</section>
 
@@ -63,7 +61,7 @@ import Layout from '../layouts/Layout.astro';
 					<p class="break-words text-gray-600 mb-4 font-extralight">En el caso de novias y madrinas 1 mes antes como mínimo.</p>
 					<p class="break-words text-gray-600 mb-4 font-extralight">No incluye colocación de pestañas postizas.</p>
 
-					<a href="/servicios" class="uppercase bg-[#E3BBBC] font-extralight py-2 px-8 rounded-md inline-block mt-6 hover:scale-110 transition-all duration-300">Más Info</a>
+					<a href="/servicios" class="uppercase bg-pale-rose font-extralight py-2 px-8 rounded-md inline-block mt-6 hover:scale-110 transition-all duration-300">Más Info</a>
 				</div>
 			</div>
 		</section>
@@ -76,7 +74,7 @@ import Layout from '../layouts/Layout.astro';
 					<p class="break-words text-gray-600 mb-4 font-extralight">Podes tomar la cantidad de clases que quieras y ver los temas que vos elijas.</p>
 					<p class="break-words text-gray-600 mb-4 font-extralight">Si querés aprender a hacerte un maquillaje de tendencia o simplemente tener asesoramiento profesional.</p>
 					
-					<a href="/servicios" class="uppercase bg-[#E3BBBC] font-extralight py-2 px-8 rounded-md inline-block mt-6 hover:scale-110 transition-all duration-300">Más Info</a>
+					<a href="/cursos" class="uppercase bg-pale-rose font-extralight py-2 px-8 rounded-md inline-block mt-6 hover:scale-110 transition-all duration-300">Más Info</a>
 				</div>
 				<div class="w-full sm:w-4/6 md:w-1/2 grid grid-cols-2 gap-4">
 					<div class="overflow-hidden">
