@@ -1,4 +1,20 @@
 ---
 const {href} = Astro.props;
+const {pathname} = Astro.url;
+
+const isActive = pathname.startsWith(href) &&  href !== '/';
 ---
-<a href={href} class="uppercase"><slot /></a>
+<a href={href} class="uppercase group transition-all duration-150 flex flex-col items-center">
+  <span class:list={[
+    {
+      "text-white group-hover:text-pale-rose transition-all duration-200": !isActive,
+      "text-pale-rose": isActive,
+    }
+  ]}><slot /></span>
+  <div class:list={[
+    {
+      "bg-pale-rose w-0 h-0.5 group-hover:w-full transition-all duration-200": !isActive,
+      "bg-pale-rose w-full h-0.5": isActive,
+    }
+  ]}></div>
+</a>
