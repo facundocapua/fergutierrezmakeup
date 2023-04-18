@@ -1,0 +1,60 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import MakeupCard from '@/components/MakeupCard.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import ClockIcon from '@/components/icons/ClockIcon.astro';
+import Button from '@/components/Button.astro';
+import { generateWhatsAppLink } from '@/utils/general';
+
+const message = `Hola, me gustaría solicitar presupueso para el servicio de maquillaje de novias/eventos.`;
+---
+
+<Layout title="Servicios">
+	<main>
+    <SectionTitle title="Maquillaje Novias" />
+
+	<section class="my-16 py-12">
+      <div class="max-w-6xl mx-auto">
+        <p>Te asesoro en el proceso de la elección del maquillaje, para que ese día tengas el look adecuado según tu estilo.</p>
+        <p>Realizamos una prueba de maquillaje con anticipación.</p>
+        <p>El día de la boda el maquillaje lo podemos hacer en mi estudio o a domicilio (se cobra adicional por viático).</p>
+
+        <ol class="relative border-l border-gray-300 mt-12">                  
+          <li class="mb-14 ml-4">
+              <div class="absolute w-4 h-4 bg-pale-rose rounded-full mt-1.5 -left-2 border border-white"></div>
+              <time class="mb-1 text-sm font-normal leading-none text-gray-600">Entre 2 y 6 meses antes del evento</time>
+              <h3 class="text-4xl font-semibold text-gray-900 font-handwriting my-2">Entrevista inicial</h3>
+              <p class="mb-4 text-base font-normal text-gray-500">Hacemos una reunión en nuestro estudio para que te saques todas las dudas.</p>
+              <div class="flex items-center gap-2 my-4 text-gray-500">
+                <ClockIcon class="w-6 h-6" /> 
+                <span class="font-light text-md">Duración: <span class="font-semibold">30</span> <small>minutos</small></span>
+              </div>
+          </li>
+          <li class="mb-14 ml-4">
+              <div class="absolute w-4 h-4 bg-pale-rose rounded-full mt-1.5 -left-2 border border-white"></div>
+              <time class="mb-1 text-sm font-normal leading-none text-gray-600 ">Un mes antes del evento</time>
+              <h3 class="text-4xl font-semibold text-gray-900 font-handwriting my-2">Prueba de maquillaje</h3>
+              <p class="text-base font-normal text-gray-500">Probamos el maquillaje que vas a llevar puesto el día del evento para que te asegures que te vas a ver como esperas.</p>
+              <div class="flex items-center gap-2 my-4 text-gray-500">
+                <ClockIcon class="w-6 h-6" /> 
+                <span class="font-light text-md">Duración: <span class="font-semibold">30</span> <small>minutos</small></span>
+              </div>
+          </li>
+          <li class="ml-4">
+              <div class="absolute w-4 h-4 bg-pale-rose rounded-full mt-1.5 -left-2 border border-white"></div>
+              <time class="mb-1 text-sm font-normal leading-none text-gray-600 ">Día del evento</time>
+              <h3 class="text-4xl font-semibold text-gray-900 font-handwriting my-2">Maquillaje para la fiesta</h3>
+              <p class="text-base font-normal text-gray-500">Lo podemos realizar en nuestro estudio o a domicilio, lo imporante ese día es que te sientas cómoda.</p>
+              <div class="flex items-center gap-2 my-4 text-gray-500">
+                <ClockIcon class="w-6 h-6" /> 
+                <span class="font-light text-md">Duración: <span class="font-semibold">60</span> <small>minutos</small></span>
+              </div>
+
+              <Button link={generateWhatsAppLink(message)}>Solicitar presupuesto</Button>
+          </li>
+      </ol>
+      </div>
+    </section>
+
+	</main>
+</Layout>

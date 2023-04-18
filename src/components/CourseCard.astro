@@ -1,0 +1,47 @@
+---
+import ClockIcon from "@/components/icons/ClockIcon.astro";
+import Button from "./Button.astro";
+import { generateWhatsAppLink } from "@/utils/general";
+
+const {name, image, description, duration, price, message}  = Astro.props
+---
+<a href={generateWhatsAppLink(message)} 
+  target="_blank"
+  rel="noopener noreferrer"
+  class="bg-gray-50 p-4 transition-all duration-500 hover:-translate-y-4 cursor-pointer flex flex-col justify-between">
+  
+  <img src={image} class="rounded-md object-cover h-[300px] w-full" />
+
+  <h3 class="text-5xl font-handwriting text-center my-4">{name}</h3>
+  
+  <div>
+    {description.map((line: string) => (
+      <p class="text-md text-left">{line}</p>
+    ))}
+  </div>
+  
+  <hr class="my-4" />
+
+  <p class="text-5xl text-center my-6">
+    { price 
+      ? (<span><small class="text-2xl pr-2">$</small>{price}</span>) 
+      : (<span class="text-3xl uppercase">Consultar</span>) 
+    }
+  </p>
+  {
+    duration ? (
+    <div class="flex items-center justify-center gap-2 my-4">
+      <ClockIcon class="w-6 h-6" /> 
+      <span class="font-light text-lg">Duración: <span class="font-semibold">{duration}</span> <small>minutos</small></span>
+    </div>
+    )
+    : null
+  }
+  
+  
+  <hr class="my-4" />
+
+  <div>
+    <Button class="w-full">Más Info</Button>
+  </div>
+</a>

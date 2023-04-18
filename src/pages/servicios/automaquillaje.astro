@@ -1,0 +1,38 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import { SELF_MAKEUP_CLASSES } from '@/data/services';
+import CourseCard from '@/components/CourseCard.astro';
+---
+
+<Layout title="Servicios">
+	<main>
+    <SectionTitle title="Clases de Automaquillaje" />
+
+    <section class="my-4 max-w-6xl mx-auto leading-loose">
+      <p>¿Querés aprender a maquillarte como una profesional y sentirte segura y radiante en cualquier ocasión?</p>
+      <p>¡Entonces estás en el lugar indicado! En mi sección de clases de automaquillaje, te voy a enseñar las mejores técnicas y productos para que puedas descubrir tus habilidades y resaltar tu belleza natural.</p>
+      <p class="my-4">Con más de 25 años de experiencia como maquilladora profesional, he aprendido que cada persona es única y tiene necesidades y preferencias individuales. Es por eso que mis clases son personalizadas para vos, para que puedas aprender a maquillarte de acuerdo a tus necesidades específicas.</p>
+      <p>No importa si sos principiante o si ya tenés experiencia en el maquillaje, mis clases te ayudarán a mejorar tus habilidades y a descubrir nuevas técnicas para resaltar tus rasgos naturales. Además, te enseñaré cómo cuidar tu piel y cómo elegir los mejores productos para vos.</p>
+      <p class="mt-4">¡Te espero!</p>
+    </section>
+
+		<section class="my-16 bg-gray-200 py-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 max-w-lg lg:max-w-none mx-auto lg:grid-cols-3 gap-8">
+          {SELF_MAKEUP_CLASSES.map((item) => (
+            <CourseCard
+              name={item.name}
+              image={item.image}
+              description={item.description}
+              price={item.price}
+              duration={item.duration}
+              message={item.message}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+	</main>
+</Layout>

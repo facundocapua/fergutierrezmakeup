@@ -1,16 +1,16 @@
 ---
 import ClockIcon from "@/components/icons/ClockIcon.astro";
 import CheckIcon from "./icons/CheckIcon.astro";
-import { CONTACT_INFO } from "@/data/general";
+import Button from "./Button.astro";
+import { generateWhatsAppLink } from "@/utils/general";
 
 const {name, description, duration, price, message}  = Astro.props
-const {whatsapp} = CONTACT_INFO
 ---
-<a href={`https://wa.me/5492494466449?text=${encodeURIComponent(message)}`} 
+<a href={generateWhatsAppLink(message)} 
   target="_blank"
   rel="noopener noreferrer"
   class="bg-gray-50 p-12 transition-all duration-500 hover:-translate-y-4 cursor-pointer">
-  <h3 class="text-3xl text-center">{name}</h3>
+  <h3 class="text-3xl font-light text-center">{name}</h3>
   <p class="text-5xl text-center my-6"><small class="text-2xl pr-2">$</small>{price}</p>
   <div class="flex items-center justify-center gap-2 my-4">
     <ClockIcon class="w-6 h-6" /> 
@@ -31,6 +31,6 @@ const {whatsapp} = CONTACT_INFO
   <hr class="my-4" />
   
   <div>
-    <button class="bg-pale-rose text-gray-700 font-semibold py-2 px-4 block w-full">Reservar</button>
+    <Button class="w-full">Reservar</Button>
   </div>
 </a>

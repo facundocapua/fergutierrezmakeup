@@ -1,0 +1,15 @@
+---
+const {link, class: className = ''} = Astro.props
+---
+
+{ link ? (
+    <a href={link} class={`uppercase bg-pale-rose font-extralight py-2 px-8 rounded-md inline-block mt-6 hover:scale-110 transition-all duration-300 ${className}`}>
+      <slot />
+    </a>
+  ) : (
+    // <button class={`bg-pale-rose text-gray-700 font-semibold py-2 px-4 block w-full ${className}`}>
+    <button class={`uppercase bg-pale-rose font-extralight py-2 px-8 rounded-md inline-block mt-6 hover:scale-110 transition-all duration-300 ${className}`}>
+      <slot />
+    </button>
+  )
+}
