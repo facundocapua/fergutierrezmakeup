@@ -1,19 +1,24 @@
 'use client'
 
-import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react'
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react'
+import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Fragment, useCallback, useEffect } from 'react'
 import type { PortfolioImage } from '@/data/portfolio'
 import { PORTFOLIO_IMAGE_PARAM } from './portfolio-image-param'
 
-/** Shows the Portfolio image selected in the URL, with arrow-key navigation. */
+const CONTROL =
+  'absolute flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow-md transition hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black'
+
+/** Shows the Portfolio image selected in the URL, with previous/next controls and arrow-key navigation. */
 export function PortfolioLightbox({ images }: { images: PortfolioImage[] }) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const { replace } = useRouter()
   const openParam = searchParams.get(PORTFOLIO_IMAGE_PARAM)
-  const openImage = openParam === null ? undefined : images[Number(openParam)]
+  const openIndex = openParam === null ? null : Number(openParam)
+  const openImage = openIndex === null ? undefined : images[openIndex]
 
   const setOpenIndex = useCallback(
     (index: number | null) => {
@@ -29,21 +34,25 @@ export function PortfolioLightbox({ images }: { images: PortfolioImage[] }) {
     [pathname, replace, searchParams]
   )
 
+  const showPrevious = useCallback(() => {
+    if (openIndex !== null) setOpenIndex(openIndex - 1 < 0 ? images.length - 1 : openIndex - 1)
+  }, [openIndex, images.length, setOpenIndex])
+
+  const showNext = useCallback(() => {
+    if (openIndex !== null) setOpenIndex((openIndex + 1) % images.length)
+  }, [openIndex, images.length, setOpenIndex])
+
   useEffect(() => {
-    if (openParam === null) return
+    if (openIndex === null) return
 
     const onKeyDown = (event: KeyboardEvent) => {
-      const current = Number(openParam)
-      if (event.key === 'ArrowLeft') {
-        setOpenIndex(current - 1 < 0 ? images.length - 1 : current - 1)
-      } else if (event.key === 'ArrowRight') {
-        setOpenIndex((current + 1) % images.length)
-      }
+      if (event.key === 'ArrowLeft') showPrevious()
+      else if (event.key === 'ArrowRight') showNext()
     }
 
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [openParam, images.length, setOpenIndex])
+  }, [openIndex, showPrevious, showNext])
 
   return (
     <Transition appear show={openImage !== undefined} as={Fragment}>
@@ -71,10 +80,48 @@ export function PortfolioLightbox({ images }: { images: PortfolioImage[] }) {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <DialogPanel className='h-full transform overflow-hidden rounded-2xl bg-white p-4 text-left align-middle shadow-xl transition-all'>
-                <div className='h-full w-full overflow-hidden object-cover'>
-                  {openImage ? <Image src={openImage.src} width={1500} height={800} alt='' /> : null}
-                </div>
+              <DialogPanel className='relative transform overflow-hidden rounded-2xl bg-white p-4 text-left align-middle shadow-xl transition-all'>
+                {openImage ? (
+                  <>
+                    <DialogTitle className='sr-only'>{openImage.alt}</DialogTitle>
+                    <Image
+                      src={openImage.src}
+                      width={1500}
+                      height={2000}
+                      sizes='(min-width: 768px) 75vh, 100vw'
+                      alt={openImage.alt}
+                      className='h-auto max-h-[calc(100dvh-4rem)] w-auto max-w-full rounded-lg'
+                    />
+                    <button
+                      type='button'
+                      onClick={() => setOpenIndex(null)}
+                      className={`${CONTROL} top-6 right-6`}
+                      aria-label='Cerrar'
+                    >
+                      <XMarkIcon className='h-6 w-6' aria-hidden='true' />
+                    </button>
+                    {images.length > 1 ? (
+                      <>
+                        <button
+                          type='button'
+                          onClick={showPrevious}
+                          className={`${CONTROL} top-1/2 left-6 -translate-y-1/2`}
+                          aria-label='Imagen anterior'
+                        >
+                          <ChevronLeftIcon className='h-6 w-6' aria-hidden='true' />
+                        </button>
+                        <button
+                          type='button'
+                          onClick={showNext}
+                          className={`${CONTROL} top-1/2 right-6 -translate-y-1/2`}
+                          aria-label='Imagen siguiente'
+                        >
+                          <ChevronRightIcon className='h-6 w-6' aria-hidden='true' />
+                        </button>
+                      </>
+                    ) : null}
+                  </>
+                ) : null}
               </DialogPanel>
             </TransitionChild>
           </div>

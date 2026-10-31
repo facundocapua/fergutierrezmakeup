@@ -7,7 +7,7 @@ import { TikTokIcon } from './icons/tiktok-icon'
 import { WhatsAppIcon } from './icons/whatsapp-icon'
 import { Logo } from './logo'
 
-const { email, phone, address, city, state, mapLink, socialNetworks } = CONTACT_DETAILS
+const { email, phone, phoneE164, address, city, state, mapLink, socialNetworks } = CONTACT_DETAILS
 
 const SOCIAL_PROFILES = [
   { name: 'Facebook', href: socialNetworks.facebook, icon: FacebookIcon },
@@ -22,13 +22,24 @@ export function Footer() {
         <Logo />
         <div className='flex flex-col gap-4 text-gray-300'>
           <h3 className='text-xl text-gray-200 uppercase'>Contacto</h3>
-          <Link href={`mailto:${email}`} className='flex items-center gap-2'>
+          <Link
+            href={`mailto:${email}`}
+            className='flex items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+          >
             <EnvelopeIcon className='h-5 w-5' /> {email}
           </Link>
-          <Link href={`sms:${phone}`} className='flex items-center gap-2'>
+          <Link
+            href={`tel:${phoneE164}`}
+            className='flex items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+          >
             <PhoneIcon className='h-5 w-5' /> {phone}
           </Link>
-          <Link href={mapLink} target='_blank' rel='noreferrer nofollow' className='flex items-center gap-2'>
+          <Link
+            href={mapLink}
+            target='_blank'
+            rel='noreferrer nofollow'
+            className='flex items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+          >
             <MapPinIcon className='h-5 w-5' /> {address} - {city}, {state}
           </Link>
         </div>
@@ -42,7 +53,7 @@ export function Footer() {
               href={item.href}
               target='_blank'
               rel='noreferrer nofollow'
-              className='text-gray-300 hover:text-gray-400'
+              className='rounded-sm text-gray-300 hover:text-gray-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
             >
               <span className='sr-only'>{item.name}</span>
               <item.icon className='h-6 w-6' aria-hidden='true' />
@@ -52,9 +63,14 @@ export function Footer() {
         <div className='mt-8 md:order-1 md:mt-0'></div>
       </div>
 
-      <Link href={socialNetworks.whatsapp} target='_blank' rel='noreferrer nofollow'>
+      <Link
+        href={socialNetworks.whatsapp}
+        target='_blank'
+        rel='noreferrer nofollow'
+        className='fixed right-1 bottom-1 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black md:right-4 md:bottom-4 md:m-4'
+      >
         <span className='sr-only'>WhatsApp</span>
-        <WhatsAppIcon className='fixed right-1 bottom-1 w-16 md:right-4 md:bottom-4 md:m-4' />
+        <WhatsAppIcon className='block w-16' aria-hidden='true' />
       </Link>
     </footer>
   )

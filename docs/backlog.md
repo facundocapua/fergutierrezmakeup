@@ -35,7 +35,7 @@ A redesign of the site is planned after the migration. Several items below are b
 | #   | Item                                                                                                                                                | Priority | Effort |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
 | S1  | Add structured data (JSON-LD `BeautySalon`/`LocalBusiness` with address, phone, opening hours and social profiles).                                 | P2       | S      |
-| S2  | Meaningful `alt` texts: Portfolio and Reviews images use empty `alt`, and the home page grids repeat "Servicios"/"Automaquillaje".                  | P2       | S      |
+| S2  | Meaningful `alt` texts for the home page grids, which repeat "Servicios"/"Automaquillaje" on every image.                                           | P2       | S      |
 | S3  | Register `fernandagutierrez.es` in Google Search Console and submit the new sitemap. Check that the `.com.ar` → `.es` redirect is a single 301 hop. | P2       | S      |
 
 ## Performance
@@ -43,16 +43,6 @@ A redesign of the site is planned after the migration. Several items below are b
 | #   | Item                                                                                                                                                                                                                | Priority | Effort |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
 | P1  | Compress the original images. `public/` still holds 14 MB, with several JPGs over 2 MB. `next/image` optimizes on the fly, but smaller originals mean faster builds, cheaper image optimization and a lighter repo. | P2       | S      |
-
-## Accessibility and UX
-
-| #   | Item                                                                                                                                                       | Priority | Effort |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| A1  | The Portfolio lightbox has no visible previous/next/close controls (today: arrow keys, Escape and click outside), and the images have no meaningful `alt`. | P2       | S      |
-| A2  | The footer phone link uses `sms:`; `tel:` (or WhatsApp) fits a Spanish mobile better. Show the phone in international format (+34).                        | P3       | S      |
-| A3  | Header nav labels and the floating WhatsApp button need visible focus styles.                                                                              | P3       | S      |
-| A4  | Class cards are entirely links with a fake button inside; consider a card with a real CTA link.                                                            | P3       | S      |
-| A5  | Add a custom 404 page that matches the site.                                                                                                               | P3       | S      |
 
 ## Engineering
 

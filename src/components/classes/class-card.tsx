@@ -19,12 +19,7 @@ export function ClassCard({
   isLcp = false
 }: Props) {
   return (
-    <a
-      href={enquiryHref}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='flex cursor-pointer flex-col rounded-t-lg bg-gray-200 transition-all duration-500 hover:-translate-y-4'
-    >
+    <article className='relative flex cursor-pointer flex-col rounded-t-lg bg-gray-200 transition-all duration-500 hover:-translate-y-4'>
       <div className='relative h-[300px] w-full'>
         <Image
           alt={name}
@@ -73,10 +68,17 @@ export function ClassCard({
           </div>
         </div>
 
-        <span className='mt-6 inline-block w-full rounded-md bg-black px-8 py-2 text-center text-xl text-white uppercase'>
+        {/* The link covers the whole card (after:inset-0), so the card stays clickable as a whole. */}
+        <a
+          href={enquiryHref}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label={`Consultar por ${name} por WhatsApp`}
+          className='mt-6 inline-block w-full rounded-md bg-black px-8 py-2 text-center text-xl text-white uppercase after:absolute after:inset-0 after:rounded-t-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black'
+        >
           Consultar
-        </span>
+        </a>
       </div>
-    </a>
+    </article>
   )
 }

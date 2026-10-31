@@ -90,7 +90,7 @@ export function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className='block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-100'
+                      className='block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-100 focus-visible:outline-2 focus-visible:outline-white'
                       onClick={closeMobileMenu}
                     >
                       {item.name}

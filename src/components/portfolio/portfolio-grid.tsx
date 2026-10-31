@@ -12,12 +12,12 @@ export function PortfolioGrid({ images }: { images: PortfolioImage[] }) {
           href={{ query: { [PORTFOLIO_IMAGE_PARAM]: index } }}
           replace
           scroll={false}
-          className={image.className}
-          aria-label={`Ampliar imagen ${index + 1} del portfolio`}
+          className={`${image.className} focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black`}
+          aria-label={`Ampliar: ${image.alt}`}
         >
           <Image
             src={image.src}
-            alt=''
+            alt={image.alt}
             className='cursor-pointer rounded-lg object-cover'
             fill
             sizes='(min-width: 1280px) 405px, (min-width: 768px) 33vw, 100vw'

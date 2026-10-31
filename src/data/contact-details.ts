@@ -1,6 +1,9 @@
 export type ContactDetails = {
   email: string
+  /** Phone as displayed. */
   phone: string
+  /** Phone in E.164 format, for tel: links. */
+  phoneE164: string
   address: string
   city: string
   state: string
@@ -16,7 +19,8 @@ export type ContactDetails = {
 /** The Studio's public Contact Details. */
 export const CONTACT_DETAILS: ContactDetails = {
   email: 'fernandagutierrez2008@gmail.com',
-  phone: '623 807 060',
+  phone: '+34 623 807 060',
+  phoneE164: '+34623807060',
   address: 'Avenida Mar Báltico 39',
   city: 'Benalmádena',
   state: 'Málaga',
