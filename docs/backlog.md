@@ -32,11 +32,10 @@ A redesign of the site is planned after the migration. Several items below are b
 
 ## Reviews
 
-| #   | Item                                                                                                                                                                                                                                                                                                                                           | Priority | Effort |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| R2  | Move from the legacy Places API (`/place/details/json`, deprecated) to Places API (New) (`GET places.googleapis.com/v1/places/{id}` with a `reviews` field mask). **Blocked:** the current `GOOGLE_API_KEY` is restricted to the legacy API; Places API (New) must be enabled on its Google Cloud project and allowed in the key restrictions. | P1       | S      |
-| R4  | Show the attribution Google Maps Platform requires when displaying Places content outside a map (Google logo/"Powered by Google" and a link to each author's profile).                                                                                                                                                                         | P2       | S      |
-| R3  | The layout assumes exactly 5 reviews; handle any count gracefully. Show a link to the Google profile and the overall rating.                                                                                                                                                                                                                   | P3       | S      |
+| #   | Item                                                                                                                                                                   | Priority | Effort |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
+| R4  | Show the attribution Google Maps Platform requires when displaying Places content outside a map (Google logo/"Powered by Google" and a link to each author's profile). | P2       | S      |
+| R3  | The layout assumes exactly 5 reviews; handle any count gracefully. Show a link to the Google profile and the overall rating.                                           | P3       | S      |
 
 ## SEO
 

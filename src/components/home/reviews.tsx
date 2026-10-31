@@ -10,15 +10,17 @@ function ReviewCard({ review }: { review: Review }) {
         <p>{`“${review.text}”`}</p>
       </blockquote>
       <figcaption className='mt-6 flex items-center gap-x-4'>
-        <Image
-          alt=''
-          src={review.profile_photo_url}
-          className='h-10 w-10 rounded-full bg-gray-50'
-          width={40}
-          height={40}
-        />
+        {review.authorPhotoUrl ? (
+          <Image
+            alt=''
+            src={review.authorPhotoUrl}
+            className='h-10 w-10 rounded-full bg-gray-50'
+            width={40}
+            height={40}
+          />
+        ) : null}
         <div className='flex-auto'>
-          <div className='font-semibold'>{review.author_name}</div>
+          <div className='font-semibold'>{review.authorName}</div>
         </div>
         <RatingStars rating={review.rating} className='flex md:hidden' />
       </figcaption>
@@ -49,15 +51,17 @@ export async function Reviews() {
               <p>{`“${featured.text}”`}</p>
             </blockquote>
             <figcaption className='flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap'>
-              <Image
-                alt=''
-                src={featured.profile_photo_url}
-                className='h-10 w-10 flex-none rounded-full bg-gray-50'
-                width={40}
-                height={40}
-              />
+              {featured.authorPhotoUrl ? (
+                <Image
+                  alt=''
+                  src={featured.authorPhotoUrl}
+                  className='h-10 w-10 flex-none rounded-full bg-gray-50'
+                  width={40}
+                  height={40}
+                />
+              ) : null}
               <div className='flex-auto'>
-                <div className='font-semibold'>{featured.author_name}</div>
+                <div className='font-semibold'>{featured.authorName}</div>
               </div>
               <RatingStars rating={featured.rating} />
             </figcaption>
@@ -76,7 +80,7 @@ export async function Reviews() {
                   )}
                 >
                   {column.map((review) => (
-                    <ReviewCard key={review.author_url} review={review} />
+                    <ReviewCard key={review.authorUrl} review={review} />
                   ))}
                 </div>
               ))}

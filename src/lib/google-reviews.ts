@@ -1,12 +1,19 @@
 import 'server-only'
 
 export type Review = {
-  author_name: string
-  author_url: string
-  profile_photo_url: string
+  authorName: string
+  authorUrl: string
+  authorPhotoUrl: string
   text: string
   rating: number
-  time: number
+}
+
+type PlacesApiReview = {
+  name: string
+  rating?: number
+  text?: { text: string }
+  originalText?: { text: string }
+  authorAttribution?: { displayName?: string; uri?: string; photoUri?: string }
 }
 
 // Google Business profile of the Studio in Benalmádena (Málaga).
@@ -14,7 +21,7 @@ const PLACE_ID = 'ChIJKfwidF79cg0RB7y7JlmiVQI'
 const ONE_DAY_IN_SECONDS = 86400
 
 /**
- * Fetches the Studio's Reviews from the (legacy) Google Places Details API.
+ * Fetches the Studio's Reviews from Google Places API (New).
  * Returns an empty list when the API key is missing or the request fails, so the
  * Reviews section is simply not rendered.
  */
@@ -22,18 +29,24 @@ export async function getReviews(): Promise<Review[]> {
   const apiKey = process.env.GOOGLE_API_KEY
   if (!apiKey) return []
 
-  const url = new URL('https://maps.googleapis.com/maps/api/place/details/json')
-  url.searchParams.set('place_id', PLACE_ID)
-  url.searchParams.set('fields', 'reviews')
-  url.searchParams.set('key', apiKey)
-  url.searchParams.set('reviews_no_translations', 'true')
-
   try {
-    const response = await fetch(url, { next: { revalidate: ONE_DAY_IN_SECONDS } })
+    const response = await fetch(`https://places.googleapis.com/v1/places/${PLACE_ID}`, {
+      headers: { 'X-Goog-Api-Key': apiKey, 'X-Goog-FieldMask': 'reviews' },
+      next: { revalidate: ONE_DAY_IN_SECONDS }
+    })
     if (!response.ok) return []
-    const data = (await response.json()) as { result?: { reviews?: Review[] } }
-    return data.result?.reviews ?? []
+    const data = (await response.json()) as { reviews?: PlacesApiReview[] }
+    return (data.reviews ?? []).map(toReview).filter((review) => review.text !== '')
   } catch {
     return []
   }
 }
+
+// The API translates reviews to the request language; show them as the author wrote them.
+const toReview = (review: PlacesApiReview): Review => ({
+  authorName: review.authorAttribution?.displayName ?? '',
+  authorUrl: review.authorAttribution?.uri ?? review.name,
+  authorPhotoUrl: review.authorAttribution?.photoUri ?? '',
+  text: review.originalText?.text ?? review.text?.text ?? '',
+  rating: review.rating ?? 0
+})

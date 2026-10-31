@@ -43,7 +43,7 @@ In October 2026 the site moved out of `exa/front` (`apps/pros/fergutierrez`, a p
 
 ### Kept as is (on purpose)
 
-- Reviews are still fetched at runtime from the legacy Google Places API with daily revalidation. At migration time the configured place was the old Tandil (Argentina) business, which has no reviews, so the section was hidden. Right after the cutover it was pointed at the Benalmádena place (`ChIJKfwidF79cg0RB7y7JlmiVQI`), and the section now shows.
+- Reviews are still fetched at runtime from the legacy Google Places API with daily revalidation. At migration time the configured place was the old Tandil (Argentina) business, which has no reviews, so the section was hidden. Right after the cutover it was pointed at the Benalmádena place (`ChIJKfwidF79cg0RB7y7JlmiVQI`), and the section now shows. The code was then moved to Places API (New).
 - All copy, including Argentinian wording (voseo), stays as it was.
 
 ## Redirects (301)
