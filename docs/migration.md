@@ -87,4 +87,5 @@ Result at migration time: all pages within 1%. With zero tolerance the only diff
 7. [x] Merge to `main` → production deploy. The domains stay attached to the project.
 8. [x] Smoke test production: all pages, the redirects above, `/sitemap.xml`, `/robots.txt`, WhatsApp links.
 9. [x] **(Owner)** Shut down Medusa.
-10. [x] **(Owner)** Move the Vercel project from the `exabeauty` team to the owner's account and revoke the bypass secret used for the parity check.
+10. [x] **(Owner)** Register `fernandagutierrez.es` in Google Search Console and submit the sitemap.
+11. [x] **(Owner)** Move the Vercel project from the `exabeauty` team to the owner's account and revoke the bypass secret used for the parity check.

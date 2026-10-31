@@ -32,10 +32,9 @@ A redesign of the site is planned after the migration. Several items below are b
 
 ## SEO
 
-| #   | Item                                                                                                                                                                                                                                                                                                                                                          | Priority | Effort |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| S4  | Add `openingHours` to the Studio's structured data (`src/lib/structured-data.ts`) once the Artist confirms the opening hours.                                                                                                                                                                                                                                 | P3       | S      |
-| S3  | **(Owner)** Register `fernandagutierrez.es` in Google Search Console (Domain property, verified with a DNS TXT record in Cloudflare) and submit `https://www.fernandagutierrez.es/sitemap.xml`. Redirects were checked: every `https://` variant reaches the site in one 301 hop; `http://` variants take two (Cloudflare's HTTP→HTTPS first), which is fine. | P2       | S      |
+| #   | Item                                                                                                                          | Priority | Effort |
+| --- | ----------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
+| S4  | Add `openingHours` to the Studio's structured data (`src/lib/structured-data.ts`) once the Artist confirms the opening hours. | P3       | S      |
 
 ## Engineering
 
