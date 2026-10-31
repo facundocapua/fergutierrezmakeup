@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+build
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+.env
+!.env.example
+.vercel
+.DS_Store
+playwright-report
+test-results
+tests/parity/__screenshots__

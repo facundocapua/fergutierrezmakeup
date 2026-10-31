@@ -1,0 +1,34 @@
+import { defineConfig, devices } from '@playwright/test'
+
+/**
+ * Local-only visual parity check used during the migration (see docs/migration.md).
+ * 1. Record the baseline from production:  pnpm parity:baseline
+ * 2. Compare the local build against it:    pnpm parity
+ */
+const PRODUCTION_URL = 'https://www.fernandagutierrez.es'
+const LOCAL_URL = 'http://localhost:3000'
+const isBaseline = process.env.PARITY_BASELINE === '1'
+
+export default defineConfig({
+  testDir: './tests/parity',
+  snapshotPathTemplate: '{testDir}/__screenshots__/{projectName}/{arg}{ext}',
+  fullyParallel: true,
+  reporter: [['list'], ['html', { open: 'never' }]],
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixelRatio: Number(process.env.PARITY_MAX_DIFF ?? 0.01),
+      animations: 'disabled',
+      caret: 'hide'
+    }
+  },
+  use: {
+    baseURL: isBaseline ? PRODUCTION_URL : LOCAL_URL
+  },
+  projects: [
+    { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } } },
+    { name: 'mobile', use: { ...devices['Pixel 7'] } }
+  ],
+  webServer: isBaseline
+    ? undefined
+    : { command: 'pnpm start', url: LOCAL_URL, reuseExistingServer: true, timeout: 60_000 }
+})
