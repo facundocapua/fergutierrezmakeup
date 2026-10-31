@@ -78,10 +78,10 @@ Result at migration time: all pages within 1%. With zero tolerance the only diff
 ## Vercel cutover checklist
 
 1. [x] Build the site and pass the parity check against production.
-2. [ ] Push to `github.com/facundocapua/fergutierrezmakeup` (`main`).
-3. [ ] **(Owner)** Vercel project → Settings → Git: disconnect the monorepo and connect `fergutierrezmakeup`.
-4. [ ] **(Owner)** Vercel project → Settings → Build & Deployment: Framework preset Next.js, root directory `/`, default install/build commands, Node.js 24.x. Clear any monorepo/turbo overrides (custom root directory, `turbo` build/ignore commands).
-5. [ ] **(Owner)** Vercel project → Settings → Environment Variables: delete `MEDUSA_BACKEND_URL`, `MEDUSA_REGION_ID`, `MEDUSA_SALES_CHANNEL_ID`, `NEXT_PUBLIC_STORE_ID` and `NEXT_PUBLIC_MERCADOPAGO_PUBLIC_KEY`; keep `GOOGLE_API_KEY`.
+2. [x] Push to `github.com/facundocapua/fergutierrezmakeup` (`main`).
+3. [x] **(Owner)** Vercel project → Settings → Git: disconnect the monorepo and connect `fergutierrezmakeup`.
+4. [x] **(Owner)** Vercel project → Settings → Build & Deployment: Framework preset Next.js, root directory `/`, default install/build commands, Node.js 24.x. Clear any monorepo/turbo overrides (custom root directory, `turbo` build/ignore commands).
+5. [x] **(Owner)** Vercel project → Settings → Environment Variables: delete `MEDUSA_BACKEND_URL`, `MEDUSA_REGION_ID`, `MEDUSA_SALES_CHANNEL_ID`, `NEXT_PUBLIC_STORE_ID` and `NEXT_PUBLIC_MERCADOPAGO_PUBLIC_KEY`; keep `GOOGLE_API_KEY`.
 6. [ ] Open a pull request to get a preview deployment, then rerun the parity check against the preview URL (`use.baseURL`).
 7. [ ] Merge to `main` → production deploy. The domains stay attached to the project.
 8. [ ] Smoke test production: all pages, the redirects above, `/sitemap.xml`, `/robots.txt`, WhatsApp links.
