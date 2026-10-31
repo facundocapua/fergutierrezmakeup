@@ -12,6 +12,9 @@ export function BrowDesign() {
         <Image
           alt='Perfilado de cejas'
           src={browDesignImage}
+          sizes='(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw'
+          loading='eager'
+          fetchPriority='high'
           className='h-1/2 w-full object-cover object-[50%_10%] lg:h-full lg:object-[50%_20%]'
         />
       </div>

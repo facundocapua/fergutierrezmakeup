@@ -25,7 +25,12 @@ export function FeaturedClasses() {
         <div className='order-1 grid w-full grid-cols-2 gap-4 sm:w-4/6 md:order-2 md:w-1/2'>
           {IMAGES.map((image, index) => (
             <div key={index} className='overflow-hidden'>
-              <Image className='h-full' alt='Automaquillaje' src={image} sizes='(min-width: 768px) 280px, 50vw' />
+              <Image
+                className='h-full'
+                alt='Automaquillaje'
+                src={image}
+                sizes='(min-width: 768px) 280px, (min-width: 640px) 33vw, 50vw'
+              />
             </div>
           ))}
         </div>

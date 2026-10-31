@@ -1,4 +1,8 @@
-import type { PortfolioImage } from '@/components/portfolio/portfolio-gallery'
+export type PortfolioImage = {
+  src: string
+  /** Classes of the grid cell holding the image (span and focal point). */
+  className: string
+}
 
 const CELL = 'relative block h-[350px] w-full rounded-xl md:h-full'
 

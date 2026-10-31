@@ -30,12 +30,6 @@ A redesign of the site is planned after the migration. Several items below are b
 | C6  | Show Brow Design pricing/duration like Social Makeup does, for consistency.                                                                                                                                                          | P3       | S      |
 | C7  | Wording inconsistency: the Brow Design page title is "Diseño de cejas", the card says "Diseño Cejas", the breadcrumb says "Cejas" and the WhatsApp message says "perfilado de cejas". Pick one.                                      | P3       | S      |
 
-## Reviews
-
-| #   | Item                                                                                                                                                                                                                                                                                  | Priority | Effort |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| R5  | Google Maps Platform terms don't allow caching Places content (only the place ID). Reviews are cached for up to 24 h via ISR, as the owner requested, to keep API cost bounded. Review whether that is acceptable, or fetch per request with a short cache if the terms are enforced. | P3       | S      |
-
 ## SEO
 
 | #   | Item                                                                                                                                                | Priority | Effort |
@@ -49,18 +43,16 @@ A redesign of the site is planned after the migration. Several items below are b
 | #   | Item                                                                                                                                                                                                                | Priority | Effort |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
 | P1  | Compress the original images. `public/` still holds 14 MB, with several JPGs over 2 MB. `next/image` optimizes on the fly, but smaller originals mean faster builds, cheaper image optimization and a lighter repo. | P2       | S      |
-| P2  | Review `sizes` on every `next/image` and use `priority` only for the LCP image of each page.                                                                                                                        | P3       | S      |
-| P3  | The Portfolio gallery reads `?image=` with `useSearchParams`, so its grid is client-rendered behind a skeleton. Render the grid on the server and keep only the lightbox on the client.                             | P3       | S      |
 
 ## Accessibility and UX
 
-| #   | Item                                                                                                                                                                                    | Priority | Effort |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| A1  | Portfolio images open the lightbox on click only; make them keyboard-focusable buttons. Add visible previous/next/close controls to the lightbox (today: arrow keys and click outside). | P2       | S      |
-| A2  | The footer phone link uses `sms:`; `tel:` (or WhatsApp) fits a Spanish mobile better. Show the phone in international format (+34).                                                     | P3       | S      |
-| A3  | Header nav labels and the floating WhatsApp button need visible focus styles.                                                                                                           | P3       | S      |
-| A4  | Class cards are entirely links with a fake button inside; consider a card with a real CTA link.                                                                                         | P3       | S      |
-| A5  | Add a custom 404 page that matches the site.                                                                                                                                            | P3       | S      |
+| #   | Item                                                                                                                                                       | Priority | Effort |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
+| A1  | The Portfolio lightbox has no visible previous/next/close controls (today: arrow keys, Escape and click outside), and the images have no meaningful `alt`. | P2       | S      |
+| A2  | The footer phone link uses `sms:`; `tel:` (or WhatsApp) fits a Spanish mobile better. Show the phone in international format (+34).                        | P3       | S      |
+| A3  | Header nav labels and the floating WhatsApp button need visible focus styles.                                                                              | P3       | S      |
+| A4  | Class cards are entirely links with a fake button inside; consider a card with a real CTA link.                                                            | P3       | S      |
+| A5  | Add a custom 404 page that matches the site.                                                                                                               | P3       | S      |
 
 ## Engineering
 

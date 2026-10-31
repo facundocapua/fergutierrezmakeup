@@ -15,7 +15,12 @@ export function FeaturedServices() {
         <div className='grid w-full grid-cols-2 gap-4 sm:w-4/6 md:w-1/2'>
           {IMAGES.map((image, index) => (
             <div key={index} className='aspect-square overflow-hidden'>
-              <Image className='w-full' alt='Servicios' src={image} sizes='(min-width: 768px) 280px, 50vw' />
+              <Image
+                className='w-full'
+                alt='Servicios'
+                src={image}
+                sizes='(min-width: 768px) 280px, (min-width: 640px) 33vw, 50vw'
+              />
             </div>
           ))}
         </div>

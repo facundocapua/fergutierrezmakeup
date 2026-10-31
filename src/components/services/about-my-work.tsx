@@ -14,7 +14,7 @@ export function AboutMyWork() {
         </div>
         <div className='grid w-full grid-cols-5 items-center gap-4 sm:w-4/6 md:w-1/2'>
           {BRANDS.map(({ name, image }) => (
-            <Image key={name} title={name} alt={name} src={image} className='w-36' />
+            <Image key={name} title={name} alt={name} src={image} className='w-36' sizes='144px' />
           ))}
         </div>
       </div>

@@ -4,9 +4,20 @@ import type { MakeupClass } from '@/data/classes'
 
 type Props = Omit<MakeupClass, 'whatsAppMessage'> & {
   enquiryHref: string
+  /** Whether this card holds the page's largest above-the-fold image. */
+  isLcp?: boolean
 }
 
-export function ClassCard({ name, description, topics, sessions, durationMinutes, image, enquiryHref }: Props) {
+export function ClassCard({
+  name,
+  description,
+  topics,
+  sessions,
+  durationMinutes,
+  image,
+  enquiryHref,
+  isLcp = false
+}: Props) {
   return (
     <a
       href={enquiryHref}
@@ -20,7 +31,9 @@ export function ClassCard({ name, description, topics, sessions, durationMinutes
           src={image}
           className='rounded-t-lg object-cover'
           fill
-          sizes='(min-width: 1024px) 620px, 512px'
+          sizes='(min-width: 1280px) 620px, (min-width: 1024px) 50vw, (min-width: 544px) 512px, 100vw'
+          loading={isLcp ? 'eager' : undefined}
+          fetchPriority={isLcp ? 'high' : undefined}
         />
       </div>
       <div className='flex grow flex-col justify-between gap-4 p-4'>

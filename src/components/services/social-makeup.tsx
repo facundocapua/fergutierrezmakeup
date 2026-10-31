@@ -12,6 +12,7 @@ export function SocialMakeup() {
             key={option.name}
             {...option}
             align={index % 2 === 0 ? 'left' : 'right'}
+            isLcp={index === 0}
             bookingHref={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, whatsAppMessage)}
           />
         ))}

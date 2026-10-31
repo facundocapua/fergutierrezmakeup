@@ -14,7 +14,9 @@ export function BridalMakeup() {
           src={bridalMakeupImage}
           className='h-full w-full object-cover object-[60%_30%]'
           fill
-          sizes='(min-width: 1024px) 640px, 100vw'
+          sizes='(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw'
+          loading='eager'
+          fetchPriority='high'
         />
       </div>
 

@@ -13,7 +13,8 @@ export function HeroBio() {
             src={profilePicture}
             alt='Fernanda Gutierrez'
             fill
-            priority
+            loading='eager'
+            fetchPriority='high'
             sizes='(min-width: 1024px) 640px, 100vw'
             className='object-cover object-[50%_70%]'
           />

@@ -7,6 +7,8 @@ import type { SocialMakeupOption as Option } from '@/data/services'
 type Props = Omit<Option, 'whatsAppMessage'> & {
   bookingHref: string
   align?: 'left' | 'right'
+  /** Whether this option holds the page's largest above-the-fold images. */
+  isLcp?: boolean
 }
 
 export function SocialMakeupOption({
@@ -17,7 +19,8 @@ export function SocialMakeupOption({
   durationMinutes,
   description,
   bookingHref,
-  align = 'left'
+  align = 'left',
+  isLcp = false
 }: Props) {
   return (
     <article className='relative'>
@@ -34,7 +37,9 @@ export function SocialMakeupOption({
                 src={src}
                 className='h-full w-full object-cover object-[50%_20%]'
                 fill
-                sizes='(min-width: 1024px) 28vw, 50vw'
+                sizes='(min-width: 1280px) 360px, (min-width: 1024px) 28vw, 50vw'
+                loading={isLcp ? 'eager' : undefined}
+                fetchPriority={isLcp ? 'high' : undefined}
               />
             </div>
           ))}
