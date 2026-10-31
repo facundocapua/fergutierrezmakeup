@@ -4,6 +4,7 @@ import { FeaturedClasses } from '@/components/home/featured-classes'
 import { FeaturedServices } from '@/components/home/featured-services'
 import { HeroBio } from '@/components/home/hero-bio'
 import { Reviews } from '@/components/home/reviews'
+import { buildStudioStructuredData, toJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' }
@@ -11,12 +12,15 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className='w-full [&>*:nth-child(odd)]:bg-gray-100'>
-      <HeroBio />
-      <BrandsShowcase />
-      <Reviews />
-      <FeaturedServices />
-      <FeaturedClasses />
-    </main>
+    <>
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: toJsonLd(buildStudioStructuredData()) }} />
+      <main className='w-full [&>*:nth-child(odd)]:bg-gray-100'>
+        <HeroBio />
+        <BrandsShowcase />
+        <Reviews />
+        <FeaturedServices />
+        <FeaturedClasses />
+      </main>
+    </>
   )
 }

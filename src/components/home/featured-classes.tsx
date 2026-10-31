@@ -4,7 +4,10 @@ import Image from 'next/image'
 import { ButtonLink } from '../button-link'
 import { Paragraph } from '../paragraph'
 
-const IMAGES = [class1, class2]
+const IMAGES = [
+  { src: class1, alt: 'Alumna aplicándose labial rojo durante una clase de automaquillaje' },
+  { src: class2, alt: 'Clase de automaquillaje en el estudio' }
+]
 
 export function FeaturedClasses() {
   return (
@@ -23,12 +26,12 @@ export function FeaturedClasses() {
           <ButtonLink href='/clases'>Más info</ButtonLink>
         </div>
         <div className='order-1 grid w-full grid-cols-2 gap-4 sm:w-4/6 md:order-2 md:w-1/2'>
-          {IMAGES.map((image, index) => (
-            <div key={index} className='overflow-hidden'>
+          {IMAGES.map((image) => (
+            <div key={image.alt} className='overflow-hidden'>
               <Image
                 className='h-full'
-                alt='Automaquillaje'
-                src={image}
+                alt={image.alt}
+                src={image.src}
                 sizes='(min-width: 768px) 280px, (min-width: 640px) 33vw, 50vw'
               />
             </div>

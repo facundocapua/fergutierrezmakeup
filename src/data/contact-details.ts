@@ -7,6 +7,10 @@ export type ContactDetails = {
   address: string
   city: string
   state: string
+  postalCode: string
+  /** ISO 3166-1 alpha-2. */
+  country: string
+  coordinates: { latitude: number; longitude: number }
   mapLink: string
   socialNetworks: {
     facebook: string
@@ -24,6 +28,9 @@ export const CONTACT_DETAILS: ContactDetails = {
   address: 'Avenida Mar Báltico 39',
   city: 'Benalmádena',
   state: 'Málaga',
+  postalCode: '29630',
+  country: 'ES',
+  coordinates: { latitude: 36.5933486, longitude: -4.5407802 },
   mapLink: 'https://maps.app.goo.gl/AeNcSQShVrHbPA4y5',
   socialNetworks: {
     facebook: 'https://www.facebook.com/fernanda.gutierrez.makeup',

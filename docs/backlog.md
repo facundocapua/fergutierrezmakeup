@@ -32,17 +32,10 @@ A redesign of the site is planned after the migration. Several items below are b
 
 ## SEO
 
-| #   | Item                                                                                                                                                | Priority | Effort |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| S1  | Add structured data (JSON-LD `BeautySalon`/`LocalBusiness` with address, phone, opening hours and social profiles).                                 | P2       | S      |
-| S2  | Meaningful `alt` texts for the home page grids, which repeat "Servicios"/"Automaquillaje" on every image.                                           | P2       | S      |
-| S3  | Register `fernandagutierrez.es` in Google Search Console and submit the new sitemap. Check that the `.com.ar` → `.es` redirect is a single 301 hop. | P2       | S      |
-
-## Performance
-
-| #   | Item                                                                                                                                                                                                                | Priority | Effort |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| P1  | Compress the original images. `public/` still holds 14 MB, with several JPGs over 2 MB. `next/image` optimizes on the fly, but smaller originals mean faster builds, cheaper image optimization and a lighter repo. | P2       | S      |
+| #   | Item                                                                                                                                                                                                                                                                                                                                                          | Priority | Effort |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
+| S4  | Add `openingHours` to the Studio's structured data (`src/lib/structured-data.ts`) once the Artist confirms the opening hours.                                                                                                                                                                                                                                 | P3       | S      |
+| S3  | **(Owner)** Register `fernandagutierrez.es` in Google Search Console (Domain property, verified with a DNS TXT record in Cloudflare) and submit `https://www.fernandagutierrez.es/sitemap.xml`. Redirects were checked: every `https://` variant reaches the site in one 301 hop; `http://` variants take two (Cloudflare's HTTP→HTTPS first), which is fine. | P2       | S      |
 
 ## Engineering
 

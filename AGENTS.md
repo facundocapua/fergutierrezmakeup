@@ -24,6 +24,7 @@ pnpm build          # production build
 pnpm lint           # ESLint (not run by `next build` in Next 16)
 pnpm typecheck      # route types + tsc
 pnpm format         # Prettier (also sorts Tailwind classes)
+pnpm images:optimize  # downscale/recompress images in public/ (run after adding photos)
 pnpm parity         # local-only visual comparison against production (see docs/migration.md)
 ```
 

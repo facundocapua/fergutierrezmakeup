@@ -26,7 +26,7 @@ All content lives in `src/data/`:
 | `brands.ts`          | Brands shown on the home and services pages      |
 | `portfolio.ts`       | Portfolio images and their layout                |
 
-Images go in `public/`.
+Images go in `public/`. After adding photos, run `pnpm images:optimize`: it caps them at 2400px and recompresses them in place (camera photos are often 3–4 MB).
 
 ## Deploy
 
