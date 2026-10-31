@@ -7,5 +7,14 @@ export default defineConfig([
   ...nextVitals,
   ...nextTs,
   prettier,
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'playwright-report/**', 'test-results/**'])
+  globalIgnores([
+    '.agents/**',
+    '.claude/**',
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts',
+    'playwright-report/**',
+    'test-results/**'
+  ])
 ])

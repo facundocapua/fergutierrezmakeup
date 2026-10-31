@@ -3,3 +3,6 @@ public
 .next
 playwright-report
 test-results
+.agents
+.claude
+skills-lock.json
