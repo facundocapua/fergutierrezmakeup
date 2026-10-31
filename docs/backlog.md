@@ -32,10 +32,9 @@ A redesign of the site is planned after the migration. Several items below are b
 
 ## Reviews
 
-| #   | Item                                                                                                                                                                   | Priority | Effort |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| R4  | Show the attribution Google Maps Platform requires when displaying Places content outside a map (Google logo/"Powered by Google" and a link to each author's profile). | P2       | S      |
-| R3  | The layout assumes exactly 5 reviews; handle any count gracefully. Show a link to the Google profile and the overall rating.                                           | P3       | S      |
+| #   | Item                                                                                                                                                                                                                                                                                  | Priority | Effort |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
+| R5  | Google Maps Platform terms don't allow caching Places content (only the place ID). Reviews are cached for up to 24 h via ISR, as the owner requested, to keep API cost bounded. Review whether that is acceptable, or fetch per request with a short cache if the terms are enforced. | P3       | S      |
 
 ## SEO
 
