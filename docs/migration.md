@@ -43,7 +43,7 @@ In October 2026 the site moved out of `exa/front` (`apps/pros/fergutierrez`, a p
 
 ### Kept as is (on purpose)
 
-- Reviews are still fetched at runtime from the legacy Google Places API with daily revalidation. **The configured place is the old Tandil (Argentina) business, which has no reviews, so the section is hidden, in production and here alike.** See the backlog.
+- Reviews are still fetched at runtime from the legacy Google Places API with daily revalidation. At migration time the configured place was the old Tandil (Argentina) business, which has no reviews, so the section was hidden. Right after the cutover it was pointed at the Benalmádena place (`ChIJKfwidF79cg0RB7y7JlmiVQI`), and the section now shows.
 - All copy, including Argentinian wording (voseo), stays as it was.
 
 ## Redirects (301)
@@ -86,4 +86,5 @@ Result at migration time: all pages within 1%. With zero tolerance the only diff
 6. [x] Open a pull request to get a preview deployment, then rerun the parity check against the preview URL: `PARITY_URL=<preview-url> VERCEL_BYPASS_SECRET=<secret> pnpm parity`. The secret comes from Vercel → Settings → Deployment Protection → Protection Bypass for Automation.
 7. [x] Merge to `main` → production deploy. The domains stay attached to the project.
 8. [x] Smoke test production: all pages, the redirects above, `/sitemap.xml`, `/robots.txt`, WhatsApp links.
-9. [ ] **(Owner)** Shut down Medusa.
+9. [x] **(Owner)** Shut down Medusa.
+10. [x] **(Owner)** Move the Vercel project from the `exabeauty` team to the owner's account and revoke the bypass secret used for the parity check.

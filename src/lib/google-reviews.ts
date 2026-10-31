@@ -9,8 +9,8 @@ export type Review = {
   time: number
 }
 
-// Google Business profile of the Studio.
-const PLACE_REFERENCE = 'ChIJszw148ofkZURVzgD0JxJxgw'
+// Google Business profile of the Studio in Benalmádena (Málaga).
+const PLACE_ID = 'ChIJKfwidF79cg0RB7y7JlmiVQI'
 const ONE_DAY_IN_SECONDS = 86400
 
 /**
@@ -23,7 +23,8 @@ export async function getReviews(): Promise<Review[]> {
   if (!apiKey) return []
 
   const url = new URL('https://maps.googleapis.com/maps/api/place/details/json')
-  url.searchParams.set('reference', PLACE_REFERENCE)
+  url.searchParams.set('place_id', PLACE_ID)
+  url.searchParams.set('fields', 'reviews')
   url.searchParams.set('key', apiKey)
   url.searchParams.set('reviews_no_translations', 'true')
 
