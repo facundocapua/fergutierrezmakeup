@@ -33,3 +33,19 @@ export function buildStudioStructuredData() {
 
 /** Serializes JSON-LD safely for an inline <script> tag. */
 export const toJsonLd = (data: object): string => JSON.stringify(data).replace(/</g, '\\u003c')
+
+/** schema.org BreadcrumbList (JSON-LD) for a page, starting at the home page. */
+export function buildBreadcrumbStructuredData(pages: { name: string; href: string }[]) {
+  const items = [{ name: 'Inicio', href: '/' }, ...pages]
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((page, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: page.name,
+      item: new URL(page.href, SITE_URL).toString()
+    }))
+  }
+}
