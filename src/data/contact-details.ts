@@ -10,6 +10,7 @@ export type ContactDetails = {
   postalCode: string
   /** ISO 3166-1 alpha-2. */
   country: string
+  openingHours: { days: string[]; opens: string; closes: string }
   coordinates: { latitude: number; longitude: number }
   mapLink: string
   socialNetworks: {
@@ -30,6 +31,11 @@ export const CONTACT_DETAILS: ContactDetails = {
   state: 'Málaga',
   postalCode: '29630',
   country: 'ES',
+  openingHours: {
+    days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '10:00',
+    closes: '20:00'
+  },
   coordinates: { latitude: 36.5933486, longitude: -4.5407802 },
   mapLink: 'https://maps.app.goo.gl/AeNcSQShVrHbPA4y5',
   socialNetworks: {

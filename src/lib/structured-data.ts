@@ -3,8 +3,19 @@ import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from './site'
 
 /** schema.org description of the Studio, for search engines (JSON-LD). */
 export function buildStudioStructuredData() {
-  const { email, phoneE164, address, city, state, postalCode, country, coordinates, mapLink, socialNetworks } =
-    CONTACT_DETAILS
+  const {
+    email,
+    phoneE164,
+    address,
+    city,
+    state,
+    postalCode,
+    country,
+    openingHours,
+    coordinates,
+    mapLink,
+    socialNetworks
+  } = CONTACT_DETAILS
 
   return {
     '@context': 'https://schema.org',
@@ -23,6 +34,12 @@ export function buildStudioStructuredData() {
       addressRegion: state,
       postalCode,
       addressCountry: country
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: openingHours.days,
+      opens: openingHours.opens,
+      closes: openingHours.closes
     },
     geo: { '@type': 'GeoCoordinates', ...coordinates },
     hasMap: mapLink,

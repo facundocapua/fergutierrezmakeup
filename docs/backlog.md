@@ -30,12 +30,6 @@ A redesign of the site is planned after the migration. Several items below are b
 | C6  | Show Brow Design pricing/duration like Social Makeup does, for consistency.                                                                                                                                                          | P3       | S      |
 | C7  | Wording inconsistency: the Brow Design page title is "Diseño de cejas", the card says "Diseño Cejas", the breadcrumb says "Cejas" and the WhatsApp message says "perfilado de cejas". Pick one.                                      | P3       | S      |
 
-## SEO
-
-| #   | Item                                                                                                                          | Priority | Effort |
-| --- | ----------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| S4  | Add `openingHours` to the Studio's structured data (`src/lib/structured-data.ts`) once the Artist confirms the opening hours. | P3       | S      |
-
 ## Engineering
 
 | #   | Item                                                                                                      | Priority | Effort |

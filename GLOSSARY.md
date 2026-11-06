@@ -17,7 +17,7 @@ The physical place where the Artist works and receives clients.
 _Avoid_: Salon, Store, Shop
 
 **Contact Details**:
-The Studio's public email, phone, address, map link and social network profiles.
+The Studio's public email, phone, address, opening hours, map link and social network profiles.
 _Avoid_: Salon info, store data
 
 ### Offering
