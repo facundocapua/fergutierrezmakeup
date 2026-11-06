@@ -1,6 +1,6 @@
+import { ButtonLink } from '@/components/button-link'
 import browDesignImage from '@public/services/3.jpg'
 import Image from 'next/image'
-import Link from 'next/link'
 import { CONTACT_DETAILS } from '@/data/contact-details'
 import { BROW_DESIGN_WHATSAPP_MESSAGE } from '@/data/services'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
@@ -34,12 +34,9 @@ export function BrowDesign() {
           </p>
           <p className='my-4'>¡Dejame ayudarte a destacar tu mejor versión con unas cejas perfectamente perfiladas!</p>
           <div>
-            <Link
-              href={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, BROW_DESIGN_WHATSAPP_MESSAGE)}
-              className='mt-6 inline-block rounded-md bg-black px-8 py-2 text-xl text-white uppercase transition-all duration-300 hover:scale-110'
-            >
+            <ButtonLink href={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, BROW_DESIGN_WHATSAPP_MESSAGE)}>
               solicitar turno
-            </Link>
+            </ButtonLink>
           </div>
         </div>
       </div>

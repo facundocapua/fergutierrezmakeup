@@ -1,7 +1,7 @@
+import { ButtonLink } from '@/components/button-link'
 import { CheckIcon, ClockIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
-import Link from 'next/link'
 import type { SocialMakeupOption as Option } from '@/data/services'
 
 type Props = Omit<Option, 'whatsAppMessage'> & {
@@ -73,12 +73,7 @@ export function SocialMakeupOption({
           ))}
 
           <div>
-            <Link
-              href={bookingHref}
-              className='mt-6 inline-block rounded-md bg-black px-8 py-2 text-xl text-white uppercase transition-all duration-300 hover:scale-110'
-            >
-              Reservar
-            </Link>
+            <ButtonLink href={bookingHref}>Reservar</ButtonLink>
           </div>
         </div>
       </div>

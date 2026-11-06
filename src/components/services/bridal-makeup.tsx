@@ -1,6 +1,6 @@
+import { ButtonLink } from '@/components/button-link'
 import bridalMakeupImage from '@public/services/5.webp'
 import Image from 'next/image'
-import Link from 'next/link'
 import { CONTACT_DETAILS } from '@/data/contact-details'
 import { BRIDAL_MAKEUP_WHATSAPP_MESSAGE } from '@/data/services'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
@@ -36,12 +36,11 @@ export function BridalMakeup() {
             cobra adicional).
           </p>
           <div>
-            <Link
+            <ButtonLink
               href={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, BRIDAL_MAKEUP_WHATSAPP_MESSAGE)}
-              className='mt-6 inline-block rounded-md bg-black px-8 py-2 text-xl text-white uppercase transition-all duration-300 hover:scale-110'
             >
               solicitar presupuesto
-            </Link>
+            </ButtonLink>
           </div>
         </div>
       </div>

@@ -25,7 +25,9 @@ export default function NotFound() {
           </li>
         ))}
       </ul>
-      <ButtonLink href='/'>Volver al inicio</ButtonLink>
+      <ButtonLink variant='secondary' href='/'>
+        Volver al inicio
+      </ButtonLink>
     </main>
   )
 }

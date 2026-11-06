@@ -1,3 +1,4 @@
+import { ButtonLink } from '@/components/button-link'
 import { BookOpenIcon, CheckIcon, ClockIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import type { MakeupClass } from '@/data/classes'
@@ -69,15 +70,15 @@ export function ClassCard({
         </div>
 
         {/* The link covers the whole card (after:inset-0), so the card stays clickable as a whole. */}
-        <a
+        <ButtonLink
           href={enquiryHref}
           target='_blank'
           rel='noopener noreferrer'
           aria-label={`Consultar por ${name} por WhatsApp`}
-          className='mt-6 inline-block w-full rounded-md bg-black px-8 py-2 text-center text-xl text-white uppercase after:absolute after:inset-0 after:rounded-t-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black'
+          className='w-full text-center after:absolute after:inset-0 after:rounded-t-lg hover:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black'
         >
           Consultar
-        </a>
+        </ButtonLink>
       </div>
     </article>
   )

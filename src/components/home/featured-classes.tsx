@@ -23,7 +23,9 @@ export function FeaturedClasses() {
             profesional.
           </Paragraph>
 
-          <ButtonLink href='/clases'>Más info</ButtonLink>
+          <ButtonLink variant='secondary' href='/clases'>
+            Más info
+          </ButtonLink>
         </div>
         <div className='order-1 grid w-full grid-cols-2 gap-4 sm:w-4/6 md:order-2 md:w-1/2'>
           {IMAGES.map((image) => (

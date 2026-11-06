@@ -36,7 +36,9 @@ export function FeaturedServices() {
           <Paragraph>Para reservar el turno de servicio de maquillaje se debe realizar una seña del 50%.</Paragraph>
           <Paragraph>De esta manera queda el lugar reservado.</Paragraph>
 
-          <ButtonLink href='/servicios'>Más info</ButtonLink>
+          <ButtonLink variant='secondary' href='/servicios'>
+            Más info
+          </ButtonLink>
         </div>
       </div>
     </section>

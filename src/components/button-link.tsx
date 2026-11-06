@@ -1,23 +1,25 @@
-import clsx from 'clsx'
 import Link from 'next/link'
-import type { ReactNode } from 'react'
+import type { ComponentProps } from 'react'
+import { twMerge } from 'tailwind-merge'
 
-type Props = {
-  children: ReactNode
-  href: string
-  className?: string
+const VARIANTS = {
+  primary: 'bg-black text-xl',
+  secondary: 'bg-neutral-700 font-extralight'
 }
 
-export function ButtonLink({ children, href, className }: Props) {
+type Props = ComponentProps<typeof Link> & {
+  variant?: keyof typeof VARIANTS
+}
+
+export function ButtonLink({ variant = 'primary', className, ...props }: Props) {
   return (
     <Link
-      href={href}
-      className={clsx(
-        'mt-6 inline-block rounded-md bg-neutral-700 px-8 py-2 font-extralight text-white uppercase transition-all duration-300 hover:scale-110',
+      className={twMerge(
+        'mt-6 inline-block rounded-md px-8 py-2 text-white uppercase transition-all duration-300 hover:scale-110',
+        VARIANTS[variant],
         className
       )}
-    >
-      {children}
-    </Link>
+      {...props}
+    />
   )
 }
