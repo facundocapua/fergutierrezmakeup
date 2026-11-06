@@ -31,6 +31,8 @@ pnpm parity         # visual comparison against production (see docs/parity.md)
 
 CI (GitHub Actions) runs format check, lint and typecheck. Build and deploy are done by Vercel's GitHub integration. Each preview deployment is also compared visually with production ([docs/parity.md](./docs/parity.md)); a failure there is a diff to review, not necessarily a bug.
 
+A pre-commit hook runs ESLint and Prettier on staged files (`simple-git-hooks` + `lint-staged`, installed by `pnpm install`).
+
 ## Conventions
 
 - **Code is in English; visible UI copy is in Spanish.** Name things with the GLOSSARY terms (`Studio`, `Service`, `Class`, `Booking`, `Quote`…), never with the legacy e-commerce names (`Salon`, `Store`, `Course`, `Product`).

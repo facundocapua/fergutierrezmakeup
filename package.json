@@ -17,7 +17,8 @@
     "format:check": "prettier --check .",
     "parity:baseline": "PARITY_BASELINE=1 playwright test --update-snapshots",
     "parity": "playwright test",
-    "images:optimize": "node scripts/optimize-images.mjs"
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "prepare": "simple-git-hooks"
   },
   "dependencies": {
     "@headlessui/react": "2.2.10",
@@ -38,11 +39,20 @@
     "eslint": "^9.39.5",
     "eslint-config-next": "16.4.3",
     "eslint-config-prettier": "^10.1.8",
+    "lint-staged": "17.6.0",
     "postcss": "^8.5.32",
     "prettier": "3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sharp": "0.35.5",
+    "simple-git-hooks": "2.14.0",
     "tailwindcss": "4.3.3",
     "typescript": "~6.0.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,mjs,ts,tsx}": "eslint --fix --no-warn-ignored",
+    "*": "prettier --write --ignore-unknown"
   }
 }
