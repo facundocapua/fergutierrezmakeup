@@ -64,7 +64,7 @@ Outside this repository, `www.fernandagutierrez.com.ar` keeps redirecting (301, 
 
 ## Visual parity check
 
-`tests/parity` holds a local-only Playwright suite that takes full-page screenshots of every page (desktop 1440px and Pixel 7) and compares them with production.
+`tests/parity` holds a Playwright suite that takes full-page screenshots of every page (desktop 1440px and Pixel 7) and compares them with production. It now also runs on preview deployments, see [parity.md](./parity.md).
 
 ```sh
 pnpm exec playwright install chromium   # once

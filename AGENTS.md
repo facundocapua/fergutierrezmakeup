@@ -8,6 +8,7 @@ It presents her Services and Classes and sends every booking or enquiry to Whats
 - [GLOSSARY.md](./GLOSSARY.md): the domain language. Use these terms in code, docs and conversations.
 - [docs/backlog.md](./docs/backlog.md): known issues and planned improvements. Check it before proposing work and add new findings to it.
 - [docs/migration.md](./docs/migration.md): how this repo was migrated from the eXa monorepo, the redirects and the Vercel cutover.
+- [docs/parity.md](./docs/parity.md): the visual comparison with production, locally and on previews.
 - [docs/adr/](./docs/adr/): architecture decisions.
 
 ## Stack
@@ -25,10 +26,10 @@ pnpm lint           # ESLint (not run by `next build` in Next 16)
 pnpm typecheck      # route types + tsc
 pnpm format         # Prettier (also sorts Tailwind classes)
 pnpm images:optimize  # downscale/recompress images in public/ (run after adding photos)
-pnpm parity         # local-only visual comparison against production (see docs/migration.md)
+pnpm parity         # visual comparison against production (see docs/parity.md)
 ```
 
-CI (GitHub Actions) runs format check, lint and typecheck. Build and deploy are done by Vercel's GitHub integration.
+CI (GitHub Actions) runs format check, lint and typecheck. Build and deploy are done by Vercel's GitHub integration. Each preview deployment is also compared visually with production ([docs/parity.md](./docs/parity.md)); a failure there is a diff to review, not necessarily a bug.
 
 ## Conventions
 

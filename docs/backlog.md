@@ -42,7 +42,6 @@ A redesign of the site is planned after the migration. Several items below are b
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
 | E1  | Upgrade to TypeScript 7 once `typescript-eslint` supports it (it supports `<6.1` today).                                                                   | P3       | S      |
 | E2  | Upgrade to ESLint 10 once the plugins in `eslint-config-next` (`react`, `import`, `jsx-a11y`) support it.                                                  | P3       | S      |
-| E3  | Run the Playwright parity/smoke suite against Vercel preview deployments in CI.                                                                            | P3       | M      |
 | E4  | Pre-commit hooks (`simple-git-hooks` + `lint-staged`) if CI feedback becomes too slow.                                                                     | P3       | S      |
 | E5  | Dependabot or Renovate for dependency updates.                                                                                                             | P3       | S      |
 | E6  | Unify the CTA button styles (black "Reservar"/"Solicitar" buttons and grey "Más info" buttons are duplicated class strings) into one component. _(revamp)_ | P3       | S      |

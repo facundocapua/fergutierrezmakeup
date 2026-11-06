@@ -1,7 +1,8 @@
 import { defineConfig, devices } from '@playwright/test'
 
 /**
- * Local-only visual parity check used during the migration (see docs/migration.md).
+ * Visual parity check against production. Runs locally and on every preview deployment
+ * (.github/workflows/parity.yml, see docs/parity.md).
  * 1. Record the baseline from production:  pnpm parity:baseline
  * 2. Compare the local build against it:    pnpm parity
  * 3. Compare a deployment instead:          PARITY_URL=https://… VERCEL_BYPASS_SECRET=… pnpm parity
@@ -16,6 +17,7 @@ export default defineConfig({
   testDir: './tests/parity',
   snapshotPathTemplate: '{testDir}/__screenshots__/{projectName}/{arg}{ext}',
   fullyParallel: true,
+  retries: process.env.CI ? 1 : 0,
   reporter: [['list'], ['html', { open: 'never' }]],
   expect: {
     toHaveScreenshot: {
