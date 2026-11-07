@@ -3,7 +3,7 @@ import { Rubik } from 'next/font/google'
 import type { ReactNode } from 'react'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
-import { SITE_DESCRIPTION, SITE_LOCALE, SITE_NAME, SITE_URL } from '@/lib/site'
+import { SITE_DESCRIPTION, SITE_LOCALE, SITE_NAME, SITE_TITLE, SITE_URL } from '@/lib/site'
 import './globals.css'
 
 const rubik = Rubik({
@@ -14,10 +14,10 @@ const rubik = Rubik({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: SITE_NAME,
+  title: { default: `${SITE_TITLE} | ${SITE_NAME}`, template: `%s | ${SITE_NAME}` },
   description: SITE_DESCRIPTION,
   openGraph: {
-    title: SITE_NAME,
+    title: `${SITE_TITLE} | ${SITE_NAME}`,
     description: SITE_DESCRIPTION,
     type: 'website',
     locale: SITE_LOCALE,

@@ -40,6 +40,7 @@ A pre-commit hook runs ESLint and Prettier on staged files (`simple-git-hooks` +
 - Pages are Server Components and static. Only the header (mobile menu) and the Portfolio lightbox are Client Components.
 - Mark only the largest above-the-fold image of each page with `loading='eager'` + `fetchPriority='high'` (`priority` is deprecated in Next 16), and give every `next/image` an accurate `sizes`.
 - Use `ButtonLink` for calls to action: `primary` (default, black) for Bookings and enquiries, `secondary` (grey) for navigation such as "Más info".
+- Every indexable page sets its title, description and canonical with `buildPageMetadata` (`src/lib/metadata.ts`).
 - Named exports, kebab-case file names, `@/` for `src/` and `@public/` for static image imports.
 - Removed routes must get a 301 in `next.config.ts`. Never let an old URL return a 404.
 

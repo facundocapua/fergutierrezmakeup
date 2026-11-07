@@ -3,12 +3,15 @@ import { Suspense } from 'react'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { PortfolioGrid } from '@/components/portfolio/portfolio-grid'
 import { PortfolioLightbox } from '@/components/portfolio/portfolio-lightbox'
+import { buildPageMetadata } from '@/lib/metadata'
 import { SectionTitle } from '@/components/section-title'
 import { PORTFOLIO_IMAGES } from '@/data/portfolio'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/portfolio' }
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Portfolio de maquillaje',
+  description: 'Trabajos de maquillaje de Fernanda Gutiérrez, maquilladora profesional en Benalmádena (Málaga).',
+  path: '/portfolio'
+})
 
 export default function PortfolioPage() {
   return (

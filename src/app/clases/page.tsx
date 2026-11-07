@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { ClassesList } from '@/components/classes/classes-list'
+import { buildPageMetadata } from '@/lib/metadata'
 import { SectionTitle } from '@/components/section-title'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/clases' }
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Clases de maquillaje en Benalmádena',
+  description:
+    'Clases personalizadas de automaquillaje y perfeccionamiento, presenciales en Benalmádena (Málaga) u online. Consulta por WhatsApp.',
+  path: '/clases'
+})
 
 export default function ClassesPage() {
   return (

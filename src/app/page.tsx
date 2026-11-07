@@ -4,11 +4,15 @@ import { FeaturedClasses } from '@/components/home/featured-classes'
 import { FeaturedServices } from '@/components/home/featured-services'
 import { HeroBio } from '@/components/home/hero-bio'
 import { Reviews } from '@/components/home/reviews'
+import { buildPageMetadata } from '@/lib/metadata'
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/lib/site'
 import { buildStudioStructuredData, toJsonLd } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/' }
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  path: '/'
+})
 
 export default function HomePage() {
   return (
