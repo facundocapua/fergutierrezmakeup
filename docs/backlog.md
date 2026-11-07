@@ -1,6 +1,6 @@
 # Backlog
 
-Improvements found during the migration (October 2026). None of them are implemented yet.
+Improvements found during the migration (October 2026) and in later reviews. None of them are implemented yet.
 
 Priority: **P1** do soon (legal, broken or data loss), **P2** valuable, **P3** nice to have. Effort: S (hours), M (a day or two), L (more).
 
@@ -28,6 +28,7 @@ A redesign of the site is planned after the migration. Several items below are b
 | C5  | Consider bringing back Services and Classes that were commented out in the old code: "Makeup Express", "Makeup Full" (Social Makeup) and "Automaquillaje grupal" (group Class, up to 3 people).                                      | P3       | S      |
 | C6  | Show Brow Design pricing/duration like Social Makeup does, for consistency.                                                                                                                                                          | P3       | S      |
 | C7  | Wording inconsistency: the Brow Design page title is "Diseño de cejas", the card says "Diseño Cejas", the breadcrumb says "Cejas" and the WhatsApp message says "perfilado de cejas". Pick one.                                      | P3       | S      |
+| C8  | **Give Classes more weight.** They are the growth bet (see PRODUCT.md), but online Classes get a single line on the home page. Develop what they offer, how they work and who they are for. Part of it needs the Artist's input.     | P2       | M      |
 
 ## Engineering
 
