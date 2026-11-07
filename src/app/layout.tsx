@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Rubik } from 'next/font/google'
+import { Bricolage_Grotesque, Reenie_Beanie, Rubik } from 'next/font/google'
 import type { ReactNode } from 'react'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
@@ -10,6 +10,20 @@ const rubik = Rubik({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-rubik'
+})
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  display: 'swap',
+  axes: ['opsz', 'wdth'],
+  variable: '--font-bricolage'
+})
+
+const reenie = Reenie_Beanie({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-reenie'
 })
 
 export const metadata: Metadata = {
@@ -27,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='es' className={rubik.variable}>
+    <html lang='es' className={`${rubik.variable} ${bricolage.variable} ${reenie.variable}`}>
       <body className='font-custom antialiased'>
         <Header />
         {children}

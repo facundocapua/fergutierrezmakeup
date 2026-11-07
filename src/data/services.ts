@@ -26,20 +26,24 @@ export type SocialMakeupOption = {
   whatsAppMessage: string
 }
 
+export const EVENT_MAKEUP_OPTION: SocialMakeupOption = {
+  name: 'Maquillaje eventos',
+  subtitle: 'Ideal para realzar tus facciones',
+  description: ['Invitadas / Bautizos / Cumpleaños / Fiestas', 'Larga duración'],
+  durationMinutes: 60,
+  image: '/services/social/4.webp',
+  secondaryImage: '/services/social/5.webp',
+  whatsAppMessage: 'Hola, me gustaría reservar un maquillaje social.'
+}
+
 /** Social Makeup options offered for Booking. */
-export const SOCIAL_MAKEUP_OPTIONS: SocialMakeupOption[] = [
-  {
-    name: 'Maquillaje eventos',
-    subtitle: 'Ideal para realzar tus facciones',
-    description: ['Invitadas / Bautizos / Cumpleaños / Fiestas', 'Larga duración'],
-    durationMinutes: 60,
-    image: '/services/social/4.webp',
-    secondaryImage: '/services/social/5.webp',
-    whatsAppMessage: '¡Hola! ¿Cómo estás? Quisiera reservar un turno para *Makeup Básico*.'
-  }
-]
+export const SOCIAL_MAKEUP_OPTIONS: SocialMakeupOption[] = [EVENT_MAKEUP_OPTION]
+
+export const MAKEUP_BOOKING_WHATSAPP_MESSAGE = 'Hola, me gustaría reservar un maquillaje.'
+
+export const GENERAL_ENQUIRY_WHATSAPP_MESSAGE = 'Hola, me gustaría hacerte una consulta.'
 
 export const BRIDAL_MAKEUP_WHATSAPP_MESSAGE =
   'Hola, me gustaría solicitar presupuesto para el servicio de maquillaje de novias.'
 
-export const BROW_DESIGN_WHATSAPP_MESSAGE = 'Hola, me gustaría solicitar turno para perfilado de cejas.'
+export const BROW_DESIGN_WHATSAPP_MESSAGE = 'Hola, me gustaría reservar un diseño de cejas.'

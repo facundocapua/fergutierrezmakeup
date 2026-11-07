@@ -5,7 +5,12 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Fragment, useState } from 'react'
+import { CLASSES_ENQUIRY_WHATSAPP_MESSAGE } from '@/data/classes'
+import { CONTACT_DETAILS } from '@/data/contact-details'
+import { MAKEUP_BOOKING_WHATSAPP_MESSAGE } from '@/data/services'
 import { NAVIGATION } from '@/lib/navigation'
+import { buildWhatsAppLink } from '@/lib/whatsapp'
+import { ActionLink } from './action-link'
 import { Logo } from './logo'
 import { NavLink } from './nav-link'
 
@@ -20,12 +25,12 @@ export function Header() {
   const navRight = NAVIGATION.slice(2)
 
   return (
-    <header className='bg-neutral-600 pt-4 pb-8'>
+    <header className='border-b border-ink/15 bg-paper py-3 font-chart text-ink'>
       <div className='grid w-full grid-cols-[auto_1fr_auto] items-center px-4 lg:grid-cols-[1fr_auto]'>
         <div className='flex lg:hidden'>
           <button
             type='button'
-            className='inline-flex items-center justify-center rounded-md text-gray-100'
+            className='inline-flex items-center justify-center text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink'
             onClick={() => setMenuOpenedAt(pathname)}
           >
             <span className='sr-only'>Abrir menú principal</span>
@@ -33,18 +38,22 @@ export function Header() {
           </button>
         </div>
 
-        <nav className='mx-auto hidden max-w-xl grow items-center justify-center gap-16 lg:flex'>
-          {navLeft.map((item) => (
-            <NavLink key={item.href} href={item.href} name={item.name} active={pathname.startsWith(item.href)} />
-          ))}
+        <nav className='hidden w-full grid-cols-[1fr_auto_1fr] items-center gap-16 lg:col-span-2 lg:grid'>
+          <div className='flex justify-end gap-16'>
+            {navLeft.map((item) => (
+              <NavLink key={item.href} href={item.href} name={item.name} active={pathname.startsWith(item.href)} />
+            ))}
+          </div>
           <Logo />
-          {navRight.map((item) => (
-            <NavLink key={item.href} href={item.href} name={item.name} active={pathname.startsWith(item.href)} />
-          ))}
+          <div className='flex gap-16'>
+            {navRight.map((item) => (
+              <NavLink key={item.href} href={item.href} name={item.name} active={pathname.startsWith(item.href)} />
+            ))}
+          </div>
         </nav>
 
         <div className='flex items-center justify-center lg:hidden'>
-          <Logo />
+          <Logo className='w-[150px]' />
         </div>
       </div>
 
@@ -59,7 +68,7 @@ export function Header() {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <div className='fixed inset-0 bg-neutral-600' />
+            <div className='fixed inset-0 bg-ink' />
           </TransitionChild>
 
           <div className='fixed inset-0 z-40 flex'>
@@ -72,30 +81,48 @@ export function Header() {
               leaveFrom='translate-x-0'
               leaveTo='-translate-x-full'
             >
-              <DialogPanel className='relative flex w-full max-w-xs flex-col overflow-y-auto bg-neutral-600 pb-12 shadow-xl'>
-                <div className='flex justify-between px-4 pt-5 pb-2'>
+              <DialogPanel className='relative flex w-full flex-col overflow-y-auto bg-ink px-4 pb-8 font-chart text-paper'>
+                <div className='flex justify-between pt-5 pb-2'>
                   <Logo />
                   <button
                     type='button'
-                    className='-m-2 inline-flex items-center justify-center rounded-md p-2 text-neutral-100'
+                    className='-m-2 inline-flex items-center justify-center p-2 text-paper focus-visible:outline-2 focus-visible:outline-paper'
                     onClick={closeMobileMenu}
                   >
-                    <span className='sr-only'>Cerrar menu</span>
+                    <span className='sr-only'>Cerrar menú</span>
                     <XMarkIcon className='h-8 w-8' aria-hidden='true' />
                   </button>
                 </div>
 
-                <div className='mt-6 space-y-2'>
+                <div className='mt-10 border-t border-paper/30'>
                   {NAVIGATION.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className='block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-100 focus-visible:outline-2 focus-visible:outline-white'
+                      className='block border-b border-paper/30 py-5 text-5xl leading-none font-bold tracking-tight text-paper [font-stretch:80%] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper'
                       onClick={closeMobileMenu}
                     >
                       {item.name}
                     </Link>
                   ))}
+                </div>
+
+                <div className='mt-auto flex flex-col items-start gap-4 pt-10'>
+                  <ActionLink
+                    href={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, MAKEUP_BOOKING_WHATSAPP_MESSAGE)}
+                    external
+                    variant='paper'
+                  >
+                    Reservar un maquillaje
+                  </ActionLink>
+                  <ActionLink
+                    href={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, CLASSES_ENQUIRY_WHATSAPP_MESSAGE)}
+                    external
+                    variant='labial'
+                    className='focus-visible:outline-paper'
+                  >
+                    Preguntar por las clases
+                  </ActionLink>
                 </div>
               </DialogPanel>
             </TransitionChild>

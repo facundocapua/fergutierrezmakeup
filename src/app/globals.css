@@ -2,12 +2,21 @@
 
 @theme {
   --font-custom: var(--font-rubik);
+  --font-chart: var(--font-bricolage);
+  --font-hand: var(--font-reenie);
 
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(222.2 47.4% 11.2%);
   --color-border: hsl(214.3 31.8% 91.4%);
 
   --color-primary-600: #525252;
+
+  --color-paper: #f4f6f6;
+  --color-ink: #1b2023;
+  --color-graphite: #4f585c;
+  --color-labial: #b5122b;
+  --color-rubor: #f3cfc2;
+  --color-bronce: #6f4231;
 }
 
 @layer base {
@@ -20,5 +29,91 @@
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
+  }
+
+  ::selection {
+    background: var(--color-labial);
+    color: var(--color-paper);
+  }
+}
+
+/* Face chart: pencil marks on the hero portrait. */
+.pencil-line,
+.pencil-zone {
+  fill: none;
+  stroke: var(--color-labial);
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+}
+
+.pencil-line {
+  stroke-width: 1.75;
+  transition: opacity 200ms ease-out;
+}
+
+.pencil-dot {
+  fill: var(--color-labial);
+  transition: opacity 200ms ease-out;
+}
+
+.pencil-pin {
+  transition: opacity 200ms ease-out;
+}
+
+/* The circle around a feature only appears while its note is active. */
+.pencil-zone {
+  stroke-width: 2.5;
+  stroke-dashoffset: 1;
+  opacity: 0; /* round caps would paint a speck even with the dash hidden */
+  transition: stroke-dashoffset 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* A note is active while focused by keyboard or ticked with a tap, or hovered with a real pointer:
+   touch browsers keep :hover after a tap, which would stop a second tap from returning to rest. */
+.face-chart:has(.chart-note input:is(:checked, :focus-visible)) :is(.pencil-line, .pencil-dot, .pencil-pin) {
+  opacity: 0.15;
+}
+
+.face-chart:has(#nota-ojos input:is(:checked, :focus-visible)) .mark-ojos,
+.face-chart:has(#nota-labios input:is(:checked, :focus-visible)) .mark-labios,
+.face-chart:has(#nota-cejas input:is(:checked, :focus-visible)) .mark-cejas,
+.face-chart:has(#nota-piel input:is(:checked, :focus-visible)) .mark-piel {
+  opacity: 1;
+  stroke-dashoffset: 0;
+}
+
+@media (hover: hover) {
+  .face-chart:has(.chart-note:hover) :is(.pencil-line, .pencil-dot, .pencil-pin) {
+    opacity: 0.15;
+  }
+
+  .face-chart:has(#nota-ojos:hover) .mark-ojos,
+  .face-chart:has(#nota-labios:hover) .mark-labios,
+  .face-chart:has(#nota-cejas:hover) .mark-cejas,
+  .face-chart:has(#nota-piel:hover) .mark-piel {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pencil-zone {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pencil-line {
+    animation: pencil-draw 1100ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: var(--draw-delay, 0ms);
+  }
+
+  @keyframes pencil-draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }

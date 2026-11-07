@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
-import { BrandsShowcase } from '@/components/home/brands-showcase'
-import { FeaturedClasses } from '@/components/home/featured-classes'
-import { FeaturedServices } from '@/components/home/featured-services'
-import { HeroBio } from '@/components/home/hero-bio'
+import { AboutArtist } from '@/components/home/about-artist'
+import { BridalSection } from '@/components/home/bridal-section'
+import { ClassesSection } from '@/components/home/classes-section'
+import { HeroChart } from '@/components/home/hero-chart'
+import { OccasionsSection } from '@/components/home/occasions-section'
+import { PortfolioSelection } from '@/components/home/portfolio-selection'
 import { Reviews } from '@/components/home/reviews'
 import { buildPageMetadata } from '@/lib/metadata'
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/lib/site'
@@ -18,12 +20,14 @@ export default function HomePage() {
   return (
     <>
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: toJsonLd(buildStudioStructuredData()) }} />
-      <main className='w-full [&>*:nth-child(odd)]:bg-gray-100'>
-        <HeroBio />
-        <BrandsShowcase />
+      <main className='w-full font-chart'>
+        <HeroChart />
+        <ClassesSection />
+        <BridalSection />
+        <OccasionsSection />
+        <PortfolioSelection />
         <Reviews />
-        <FeaturedServices />
-        <FeaturedClasses />
+        <AboutArtist />
       </main>
     </>
   )

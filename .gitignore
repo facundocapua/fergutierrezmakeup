@@ -12,3 +12,5 @@ next-env.d.ts
 playwright-report
 test-results
 tests/parity/__screenshots__
+
+.impeccable/review/

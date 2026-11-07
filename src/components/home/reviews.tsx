@@ -16,13 +16,18 @@ function GoogleMapsAttribution() {
 
 function ReviewAuthor({ review }: { review: Review }) {
   const avatar = review.authorPhotoUrl ? (
-    <Image alt='' src={review.authorPhotoUrl} className='h-10 w-10 rounded-full bg-gray-50' width={40} height={40} />
+    <Image alt='' src={review.authorPhotoUrl} className='h-9 w-9 rounded-full bg-rubor' width={40} height={40} />
   ) : null
 
   return (
-    <div className='flex items-center gap-x-4'>
+    <div className='flex items-center gap-x-3'>
       {review.authorUrl ? (
-        <a href={review.authorUrl} target='_blank' rel='noreferrer nofollow' className='flex items-center gap-x-4'>
+        <a
+          href={review.authorUrl}
+          target='_blank'
+          rel='noreferrer nofollow'
+          className='flex items-center gap-x-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink'
+        >
           {avatar}
           <span className='font-semibold'>{review.authorName}</span>
         </a>
@@ -36,39 +41,55 @@ function ReviewAuthor({ review }: { review: Review }) {
   )
 }
 
-function ReviewCard({ review, featured = false }: { review: Review; featured?: boolean }) {
+const FEATURED_REVIEW_MAX_LENGTH = 520
+const REVIEW_MAX_LENGTH = 340
+
+/** Shortens a long review at the end of a sentence, or of a word if none fits; the full text stays on Google Maps. */
+function excerptReview(text: string, maxLength: number) {
+  const unquoted = text.replace(/^["“”«»\s]+|["“”«»\s]+$/g, '')
+  if (unquoted.length <= maxLength) return unquoted
+
+  let excerpt = ''
+  for (const sentence of unquoted.match(/[^.!?…]+[.!?…]+\s*/g) ?? []) {
+    if (excerpt.length + sentence.length > maxLength) break
+    excerpt += sentence
+  }
+  return excerpt.trim() || `${unquoted.slice(0, maxLength).replace(/\s+\S*$/, '')}…`
+}
+
+function ReviewEntry({ review, featured = false }: { review: Review; featured?: boolean }) {
   return (
     <figure
       className={clsx(
-        'flex flex-col rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5',
-        featured && 'sm:col-span-2 sm:p-10'
+        'flex flex-col',
+        featured
+          ? 'lg:sticky lg:top-8 lg:col-span-5 lg:row-span-4 lg:self-start'
+          : 'border-t border-ink/30 pt-6 lg:col-span-7'
       )}
     >
       <div className='flex items-center justify-between gap-4'>
-        <RatingStars rating={review.rating} />
-        {review.publishedAgo ? <span className='text-sm text-gray-500'>{review.publishedAgo}</span> : null}
+        <RatingStars rating={review.rating} className='text-labial' />
+        {review.publishedAgo ? <span className='text-sm text-graphite'>{review.publishedAgo}</span> : null}
       </div>
       <blockquote
         className={clsx(
-          'mt-4 text-gray-900',
-          featured
-            ? 'line-clamp-6 text-lg leading-7 font-semibold tracking-tight sm:text-xl sm:leading-8'
-            : 'line-clamp-8 text-sm leading-6'
+          'mt-4',
+          featured ? 'text-2xl leading-snug font-medium tracking-tight sm:text-3xl sm:leading-snug' : 'leading-relaxed'
         )}
       >
-        <p>{`“${review.text}”`}</p>
+        <p>{`“${excerptReview(review.text, featured ? FEATURED_REVIEW_MAX_LENGTH : REVIEW_MAX_LENGTH)}”`}</p>
       </blockquote>
-      <a
-        href={review.googleMapsUrl}
-        target='_blank'
-        rel='noreferrer nofollow'
-        className='mt-3 mb-6 text-sm font-medium text-gray-600 underline underline-offset-2 hover:text-black'
-      >
-        Leer en Google Maps
-      </a>
-      <figcaption className='mt-auto border-t border-gray-900/10 pt-6 text-sm'>
+      <div className='mt-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 text-sm'>
         <ReviewAuthor review={review} />
-      </figcaption>
+        <a
+          href={review.googleMapsUrl}
+          target='_blank'
+          rel='noreferrer nofollow'
+          className='font-medium text-graphite underline underline-offset-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink'
+        >
+          Leer en Google Maps
+        </a>
+      </div>
     </figure>
   )
 }
@@ -80,32 +101,31 @@ export async function Reviews() {
   const { rating, reviewCount, googleMapsUrl, reviews } = googleReviews
 
   return (
-    <section className='relative isolate py-12'>
-      <div className='mx-auto max-w-7xl px-4 lg:px-8'>
-        <div className='mx-auto max-w-xl text-center'>
-          <h2 className='text-lg leading-8 font-semibold tracking-tight text-neutral-600'>Reseñas</h2>
-          <p className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>Lo que opinan mis clientas</p>
-        </div>
+    <section className='bg-paper px-4 py-14 text-ink sm:px-8 lg:px-16 lg:py-24'>
+      <div className='mx-auto max-w-[1548px]'>
+        <h2 className='text-5xl leading-none font-bold tracking-tight text-balance [font-stretch:80%] sm:text-7xl'>
+          Lo que opinan mis clientas.
+        </h2>
 
-        <div className='mt-12 flex flex-col gap-4 border-b border-gray-900/10 pb-4 sm:flex-row sm:items-center sm:justify-between'>
+        <div className='mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
           <a
             href={googleMapsUrl}
             target='_blank'
             rel='noreferrer nofollow'
-            className='flex flex-wrap items-center gap-x-3 gap-y-1 text-gray-900 hover:underline'
+            className='flex flex-wrap items-center gap-x-3 gap-y-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink'
           >
             <span className='text-2xl font-bold'>{ratingFormatter.format(rating)}</span>
-            <RatingStars rating={Math.round(rating)} />
-            <span className='text-sm text-gray-600'>{reviewCount} reseñas</span>
+            <RatingStars rating={Math.round(rating)} className='text-labial' />
+            <span className='text-sm text-graphite'>{reviewCount} reseñas</span>
           </a>
-          <p className='text-sm text-gray-600'>
+          <p className='text-sm text-graphite'>
             Las reseñas más relevantes según <GoogleMapsAttribution />
           </p>
         </div>
 
-        <div className='mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
+        <div className='mt-12 grid gap-x-16 gap-y-8 lg:grid-cols-12'>
           {reviews.map((review, index) => (
-            <ReviewCard key={review.googleMapsUrl} review={review} featured={index === 0} />
+            <ReviewEntry key={review.googleMapsUrl} review={review} featured={index === 0} />
           ))}
         </div>
       </div>

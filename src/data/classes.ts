@@ -8,6 +8,8 @@ export type MakeupClass = {
   whatsAppMessage: string
 }
 
+export const CLASSES_ENQUIRY_WHATSAPP_MESSAGE = 'Hola, me gustaría saber más sobre tus clases de maquillaje.'
+
 /** Classes the Artist teaches. */
 export const CLASSES: MakeupClass[] = [
   {
