@@ -39,7 +39,7 @@ A redesign of the site is planned after the migration. Several items below are b
 | D3  | Resolve the design debts listed in [DESIGN.md](../DESIGN.md): body text in weight 200, mixed heading styles, card shapes and neutral families. _(revamp)_                                                                                                           | P3       | M      |
 | D4  | **Handwritten notes in the Artist's own hand.** The home's pencil notes use Reenie Beanie as a stand-in. Once Fernanda has corrected the drafted notes, replace them with scans of her handwriting, with text alternatives.                                         | P2       | M      |
 | D5  | **Carry the face chart past the Classes section.** Pencil marks, swatches and notes stop after Classes. Native moves: a note on the bridal lip liner and hand captions in the Portfolio selection. Classes, Bridal and About also share one photo-and-field split.  | P3       | M      |
-| D6  | **Action states in La Ficha.** The Labial action's hover turns Ink, so it vanishes on Ink grounds (footer, mobile menu), and the floating WhatsApp's Labial focus outline can't be seen over the Labial field.                                                      | P2       | S      |
+| D6  | **Small palette debts.** The pencil mark on the Classes photo has a thinner stroke and no halo, unlike the hero's, and the Rosa text selection can't be seen on the Rosa field.                                                                                     | P3       | S      |
 
 ## Engineering
 

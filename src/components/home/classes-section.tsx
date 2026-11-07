@@ -12,7 +12,7 @@ const SUMMARIES = [
 
 export function ClassesSection() {
   return (
-    <section id='clases' className='scroll-mt-4 bg-labial text-paper'>
+    <section id='clases' className='scroll-mt-4 bg-rosa text-ink'>
       <div className='mx-auto grid max-w-[1680px] lg:grid-cols-12'>
         <div className='@container relative lg:col-span-5'>
           <Image
@@ -24,7 +24,7 @@ export function ClassesSection() {
           <p className='absolute top-[83%] left-[7%] w-[46%] font-hand text-[7.4cqw] leading-none text-ink'>
             Te ayudo a armar tu kit.
           </p>
-          <svg aria-hidden='true' viewBox='0 0 300 400' className='absolute inset-0 h-full w-full text-labial'>
+          <svg aria-hidden='true' viewBox='0 0 300 400' className='absolute inset-0 h-full w-full text-dorado-hondo'>
             <path
               d='M112 330 C 130 290, 152 255, 186 222'
               fill='none'
@@ -46,11 +46,11 @@ export function ClassesSection() {
             necesites.
           </p>
 
-          <ul className='mt-12 border-t border-paper/40'>
+          <ul className='mt-12 border-t border-ink/30'>
             {CLASSES.map((makeupClass, index) => (
               <li
                 key={makeupClass.name}
-                className='grid gap-x-10 gap-y-4 border-b border-paper/40 py-8 md:grid-cols-[minmax(0,1fr)_auto]'
+                className='grid gap-x-10 gap-y-4 border-b border-ink/30 py-8 md:grid-cols-[minmax(0,1fr)_auto]'
               >
                 <div>
                   <h3 className='text-3xl font-semibold tracking-tight'>{makeupClass.name}</h3>
@@ -72,7 +72,6 @@ export function ClassesSection() {
                 <ActionLink
                   href={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, makeupClass.whatsAppMessage)}
                   external
-                  variant='paper'
                   className='self-start'
                 >
                   Consultar

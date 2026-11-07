@@ -11,12 +11,15 @@
 
   --color-primary-600: #525252;
 
-  --color-paper: #f4f6f6;
-  --color-ink: #1b2023;
-  --color-graphite: #4f585c;
-  --color-labial: #b5122b;
-  --color-rubor: #f3cfc2;
-  --color-bronce: #6f4231;
+  --color-paper: #fdfbf8;
+  --color-ink: #171412;
+  --color-graphite: #5c534c;
+  --color-beige: #e8ddd0;
+  --color-rosa: #f1cdcf;
+  --color-rosa-hondo: #a63d5e;
+  --color-rosa-oscuro: #86304b;
+  --color-dorado: #d9b65f;
+  --color-dorado-hondo: #7f5f22;
 }
 
 @layer base {
@@ -32,27 +35,33 @@
   }
 
   ::selection {
-    background: var(--color-labial);
-    color: var(--color-paper);
+    background: var(--color-rosa);
+    color: var(--color-ink);
   }
 }
 
-/* Face chart: pencil marks on the hero portrait. */
+/* Face chart: gold pencil marks on the hero portrait. The halo keeps them legible over skin and hair. */
+.pencil-line,
+.pencil-dot,
+.pencil-zone {
+  filter: drop-shadow(0 0 1px rgb(253 251 248 / 0.9));
+}
+
 .pencil-line,
 .pencil-zone {
   fill: none;
-  stroke: var(--color-labial);
+  stroke: var(--color-dorado-hondo);
   stroke-linecap: round;
   stroke-dasharray: 1;
 }
 
 .pencil-line {
-  stroke-width: 1.75;
+  stroke-width: 2;
   transition: opacity 200ms ease-out;
 }
 
 .pencil-dot {
-  fill: var(--color-labial);
+  fill: var(--color-dorado-hondo);
   transition: opacity 200ms ease-out;
 }
 

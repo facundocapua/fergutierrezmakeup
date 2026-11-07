@@ -5,8 +5,8 @@ import { twMerge } from 'tailwind-merge'
 
 const VARIANTS = {
   ink: 'bg-ink text-paper hover:bg-graphite focus-visible:outline-ink',
-  labial: 'bg-labial text-paper hover:bg-ink focus-visible:outline-labial',
-  paper: 'bg-paper text-ink hover:bg-rubor focus-visible:outline-paper',
+  rosa: 'bg-rosa-hondo text-paper hover:bg-rosa-oscuro focus-visible:outline-rosa-hondo',
+  paper: 'bg-paper text-ink hover:bg-rosa focus-visible:outline-paper',
   line: 'border-b-2 border-current px-0 py-1 focus-visible:outline-current'
 }
 
@@ -19,7 +19,7 @@ type Props = {
   className?: string
 }
 
-/** Square-cornered call to action of the La Ficha world. */
+/** Square-cornered call to action. */
 export function ActionLink({ children, href, variant = 'ink', external = false, className }: Props) {
   const Icon = external ? ArrowUpRightIcon : ArrowRightIcon
 

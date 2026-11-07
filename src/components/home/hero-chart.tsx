@@ -88,7 +88,7 @@ export function HeroChart() {
             <span className='block sm:col-start-1 sm:row-start-1 lg:absolute lg:top-[6%] lg:left-[3.3%]'>
               Te maquillo.
             </span>{' '}
-            <span className='row-start-3 mt-8 block text-labial sm:col-start-2 sm:row-start-1 sm:mt-0 lg:absolute lg:top-[6%] lg:left-[70.5%]'>
+            <span className='row-start-3 mt-8 block text-rosa-hondo sm:col-start-2 sm:row-start-1 sm:mt-0 lg:absolute lg:top-[6%] lg:left-[70.5%]'>
               Te enseño.
             </span>
           </h1>
@@ -110,7 +110,7 @@ export function HeroChart() {
             <p className='max-w-md sm:text-lg lg:text-[max(15px,1.25cqw)] lg:leading-snug'>
               Clases de automaquillaje y perfeccionamiento, presenciales u online.
             </p>
-            <ActionLink href='#clases' variant='labial' className='mt-3 lg:mt-4'>
+            <ActionLink href='#clases' variant='rosa' className='mt-3 lg:mt-4'>
               Quiero aprender
             </ActionLink>
           </div>
@@ -144,7 +144,7 @@ export function HeroChart() {
             {NOTES.map((note, index) => (
               <li
                 key={note.id}
-                className={`pencil-pin mark-${note.id} absolute flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-labial text-xs font-semibold text-paper`}
+                className={`pencil-pin mark-${note.id} absolute flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-dorado-hondo text-xs font-semibold text-paper ring-1 ring-paper`}
                 style={{
                   left: `${((note.dot.x - PHOTO_STAGE_LEFT) / 514) * 100}%`,
                   top: `${(note.dot.y / 820) * 100}%`
@@ -181,12 +181,12 @@ export function HeroChart() {
               <li key={note.id} className={clsx('lg:absolute lg:w-[26%]', note.position)}>
                 <label
                   id={`nota-${note.id}`}
-                  className='chart-note flex w-full cursor-pointer items-center gap-3 py-1 has-checked:text-labial has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-labial'
+                  className='chart-note flex w-full cursor-pointer items-center gap-3 py-1 has-checked:text-dorado-hondo has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-dorado-hondo'
                 >
                   <input type='checkbox' className='sr-only' />
                   <span
                     aria-hidden='true'
-                    className='flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-labial text-xs font-semibold text-paper lg:hidden'
+                    className='flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-dorado-hondo text-xs font-semibold text-paper lg:hidden'
                   >
                     {index + 1}
                   </span>

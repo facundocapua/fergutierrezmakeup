@@ -23,8 +23,8 @@ export function NavLink({ href, name, active = false }: Props) {
       </span>
       <div
         className={clsx({
-          'h-0.5 w-0 bg-labial transition-all duration-200 group-hover:w-full': !active,
-          'h-0.5 w-full bg-labial': active
+          'h-0.5 w-0 bg-dorado-hondo transition-all duration-200 group-hover:w-full': !active,
+          'h-0.5 w-full bg-dorado-hondo': active
         })}
       ></div>
     </Link>

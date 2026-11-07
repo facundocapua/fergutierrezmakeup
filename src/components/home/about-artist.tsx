@@ -13,7 +13,7 @@ function brandLogoSize({ width, height }: { width: number; height: number }) {
 
 export function AboutArtist() {
   return (
-    <section className='bg-bronce text-paper'>
+    <section className='border-b-2 border-dorado bg-ink text-paper'>
       <div className='mx-auto grid max-w-[1680px] lg:grid-cols-12'>
         <div className='relative aspect-[4/5] sm:aspect-square lg:col-span-5 lg:aspect-auto'>
           <Image
@@ -25,7 +25,7 @@ export function AboutArtist() {
           />
         </div>
         <div className='px-4 py-14 sm:px-8 lg:col-span-7 lg:px-16 lg:py-24'>
-          <h2 className='text-5xl leading-none font-bold tracking-tight text-balance [font-stretch:80%] sm:text-7xl'>
+          <h2 className='text-5xl leading-none font-bold tracking-tight text-balance text-dorado [font-stretch:80%] sm:text-7xl'>
             Soy Fernanda Gutiérrez.
           </h2>
           <div className='mt-8 max-w-xl space-y-4 text-xl'>
@@ -40,7 +40,7 @@ export function AboutArtist() {
             <p>Me sigo formando en distintas técnicas. Hoy vivo en Málaga, donde tengo mi estudio.</p>
           </div>
 
-          <h3 className='mt-14 text-xl font-semibold'>Marcas que utilizo</h3>
+          <h3 className='mt-14 text-xl font-semibold text-dorado'>Marcas que utilizo</h3>
           <ul className='mt-6 flex flex-wrap items-center gap-x-8 gap-y-6'>
             {BRANDS.map(({ name, image }) => (
               <li key={name}>

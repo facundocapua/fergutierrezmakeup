@@ -19,7 +19,7 @@ const STEPS = [
 
 export function BridalSection() {
   return (
-    <section className='bg-rubor text-ink'>
+    <section className='bg-beige text-ink'>
       <div className='mx-auto grid max-w-[1680px] lg:grid-cols-12'>
         <div className='order-2 px-4 py-14 sm:px-8 lg:order-1 lg:col-span-7 lg:px-16 lg:py-24'>
           <h2 className='text-5xl leading-none font-bold tracking-tight text-balance [font-stretch:80%] sm:text-7xl'>
@@ -35,7 +35,7 @@ export function BridalSection() {
                 key={step.title}
                 className='grid grid-cols-[3rem_1fr] border-b border-ink/30 py-6 md:grid-cols-[4rem_16rem_1fr]'
               >
-                <span className='font-hand text-4xl leading-none text-labial'>{index + 1}</span>
+                <span className='font-hand text-4xl leading-none text-dorado-hondo'>{index + 1}</span>
                 <h3 className='text-2xl font-semibold tracking-tight'>{step.title}</h3>
                 <p className='col-start-2 mt-2 max-w-md md:col-start-3 md:mt-0'>{step.text}</p>
               </li>

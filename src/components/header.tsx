@@ -118,7 +118,7 @@ export function Header() {
                   <ActionLink
                     href={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, CLASSES_ENQUIRY_WHATSAPP_MESSAGE)}
                     external
-                    variant='labial'
+                    variant='rosa'
                     className='focus-visible:outline-paper'
                   >
                     Preguntar por las clases

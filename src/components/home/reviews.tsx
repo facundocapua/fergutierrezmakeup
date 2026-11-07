@@ -16,7 +16,7 @@ function GoogleMapsAttribution() {
 
 function ReviewAuthor({ review }: { review: Review }) {
   const avatar = review.authorPhotoUrl ? (
-    <Image alt='' src={review.authorPhotoUrl} className='h-9 w-9 rounded-full bg-rubor' width={40} height={40} />
+    <Image alt='' src={review.authorPhotoUrl} className='h-9 w-9 rounded-full bg-rosa' width={40} height={40} />
   ) : null
 
   return (
@@ -68,7 +68,7 @@ function ReviewEntry({ review, featured = false }: { review: Review; featured?: 
       )}
     >
       <div className='flex items-center justify-between gap-4'>
-        <RatingStars rating={review.rating} className='text-labial' />
+        <RatingStars rating={review.rating} className='text-dorado-hondo' />
         {review.publishedAgo ? <span className='text-sm text-graphite'>{review.publishedAgo}</span> : null}
       </div>
       <blockquote
@@ -115,7 +115,7 @@ export async function Reviews() {
             className='flex flex-wrap items-center gap-x-3 gap-y-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink'
           >
             <span className='text-2xl font-bold'>{ratingFormatter.format(rating)}</span>
-            <RatingStars rating={Math.round(rating)} className='text-labial' />
+            <RatingStars rating={Math.round(rating)} className='text-dorado-hondo' />
             <span className='text-sm text-graphite'>{reviewCount} reseñas</span>
           </a>
           <p className='text-sm text-graphite'>

@@ -41,7 +41,7 @@ export function Footer() {
             <ActionLink
               href={buildWhatsAppLink(socialNetworks.whatsapp, CLASSES_ENQUIRY_WHATSAPP_MESSAGE)}
               external
-              variant='labial'
+              variant='rosa'
               className='focus-visible:outline-paper'
             >
               Preguntar por las clases
@@ -83,7 +83,7 @@ export function Footer() {
         href={buildWhatsAppLink(socialNetworks.whatsapp, GENERAL_ENQUIRY_WHATSAPP_MESSAGE)}
         target='_blank'
         rel='noreferrer nofollow'
-        className='fixed right-3 bottom-3 flex h-12 w-12 items-center justify-center border border-paper bg-ink text-paper transition-colors duration-200 hover:bg-labial focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-labial lg:right-4 lg:bottom-4'
+        className='fixed right-3 bottom-3 flex h-12 w-12 items-center justify-center border border-paper bg-ink text-paper transition-colors duration-200 hover:bg-rosa-hondo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rosa-hondo lg:right-4 lg:bottom-4'
       >
         <span className='sr-only'>WhatsApp</span>
         <WhatsAppGlyph className='h-6 w-6' aria-hidden='true' />

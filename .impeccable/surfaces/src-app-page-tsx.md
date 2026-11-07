@@ -17,7 +17,7 @@ Unresolved: the Artist must review the drafted notes on the hero and Class photo
 
 THESIS: A real face treated as the Artist's working face chart, flanked by her two verbs. It refuses the beauty-site hero of a portrait, a tagline and a row of service cards.
 
-OWN-WORLD: Cool chart paper, graphite ink and red pencil marks; whole sections in pigment fields (lipstick red, blush, bronze) taken from the photographs. Square-cornered actions, ruled rows instead of cards, hand-pencilled notes with swatches. No gold, no pink gradient, no cream.
+OWN-WORLD: The Artist's new studio in Málaga: warm white, beige walls, powder pink and gold details, with black for ink. Her palette is black, beige, pink, gold and white. Whole sections in those fields, gold pencil marks on the faces. Square-cornered actions, ruled rows instead of cards, hand-pencilled notes with swatches.
 
 STORY: She does it and she teaches it. Classes come first, then Bridal Makeup step by step, then fast booking, her work, Reviews and who she is. Everything ends in WhatsApp.
 
