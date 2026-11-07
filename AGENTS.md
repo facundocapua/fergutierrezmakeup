@@ -7,6 +7,7 @@ It presents her Services and Classes and sends every booking or enquiry to Whats
 
 - [GLOSSARY.md](./GLOSSARY.md): the domain language. Use these terms in code, docs and conversations.
 - [PRODUCT.md](./PRODUCT.md): who the site is for, what the business wants from it and the priorities between Classes, Bridal Makeup and other Services.
+- [DESIGN.md](./DESIGN.md): the visual system as implemented, including known debts. Update it and `.impeccable/design.json` when the design changes.
 - [docs/backlog.md](./docs/backlog.md): known issues and planned improvements. Check it before proposing work and add new findings to it.
 - [docs/migration.md](./docs/migration.md): how this repo was migrated from the eXa monorepo, the redirects and the Vercel cutover.
 - [docs/parity.md](./docs/parity.md): the visual comparison with production, locally and on previews.

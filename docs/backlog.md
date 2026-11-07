@@ -30,6 +30,14 @@ A redesign of the site is planned after the migration. Several items below are b
 | C7  | Wording inconsistency: the Brow Design page title is "Diseño de cejas", the card says "Diseño Cejas", the breadcrumb says "Cejas" and the WhatsApp message says "perfilado de cejas". Pick one.                                      | P3       | S      |
 | C8  | **Give Classes more weight.** They are the growth bet (see PRODUCT.md), but online Classes get a single line on the home page. Develop what they offer, how they work and who they are for. Part of it needs the Artist's input.     | P2       | M      |
 
+## Design
+
+| #   | Item                                                                                                                                                                               | Priority | Effort |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
+| D1  | **Contrast in the header.** The active and hover navigation text and the signature in the logo are black on Studio Graphite (2.69:1, WCAG AA asks for 4.5:1, or 3:1 for graphics). | P2       | S      |
+| D2  | Add a designed focus style to `ButtonLink` and Service cards, which rely on the browser's default.                                                                                 | P3       | S      |
+| D3  | Resolve the design debts listed in [DESIGN.md](../DESIGN.md): body text in weight 200, mixed heading styles, card shapes and neutral families. _(revamp)_                          | P3       | M      |
+
 ## Engineering
 
 | #   | Item                                                                                                      | Priority | Effort |

@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T09:17:36+00:00",
+  "title": "Design System: Fer Gutierrez MakeUp",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.0)",
+          "oklch(26.4% 0.0000 0.0)",
+          "oklch(37.9% 0.0000 0.0)",
+          "oklch(49.3% 0.0000 0.0)",
+          "oklch(60.7% 0.0000 0.0)",
+          "oklch(72.1% 0.0000 0.0)",
+          "oklch(83.6% 0.0000 0.0)",
+          "oklch(95.0% 0.0000 0.0)"
+        ]
+      },
+      "studio-graphite": {
+        "role": "primary",
+        "displayName": "Studio Graphite",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 89.9)",
+          "oklch(26.4% 0.0000 89.9)",
+          "oklch(37.9% 0.0000 89.9)",
+          "oklch(49.3% 0.0000 89.9)",
+          "oklch(60.7% 0.0000 89.9)",
+          "oklch(72.1% 0.0000 89.9)",
+          "oklch(83.6% 0.0000 89.9)",
+          "oklch(95.0% 0.0000 89.9)"
+        ]
+      },
+      "deep-graphite": {
+        "role": "primary",
+        "displayName": "Deep Graphite",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 89.9)",
+          "oklch(26.4% 0.0000 89.9)",
+          "oklch(37.9% 0.0000 89.9)",
+          "oklch(49.3% 0.0000 89.9)",
+          "oklch(60.7% 0.0000 89.9)",
+          "oklch(72.1% 0.0000 89.9)",
+          "oklch(83.6% 0.0000 89.9)",
+          "oklch(95.0% 0.0000 89.9)"
+        ]
+      },
+      "lipstick-rose": {
+        "role": "tertiary",
+        "displayName": "Lipstick Rose",
+        "tonalRamp": [
+          "oklch(15.0% 0.0539 16.9)",
+          "oklch(26.4% 0.0950 16.9)",
+          "oklch(37.9% 0.1362 16.9)",
+          "oklch(49.3% 0.1773 16.9)",
+          "oklch(60.7% 0.1773 16.9)",
+          "oklch(72.1% 0.1362 16.9)",
+          "oklch(83.6% 0.0950 16.9)",
+          "oklch(95.0% 0.0539 16.9)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 89.9)",
+          "oklch(26.4% 0.0000 89.9)",
+          "oklch(37.9% 0.0000 89.9)",
+          "oklch(49.3% 0.0000 89.9)",
+          "oklch(60.7% 0.0000 89.9)",
+          "oklch(72.1% 0.0000 89.9)",
+          "oklch(83.6% 0.0000 89.9)",
+          "oklch(95.0% 0.0000 89.9)"
+        ]
+      },
+      "soft-mist": {
+        "role": "neutral",
+        "displayName": "Soft Mist",
+        "tonalRamp": [
+          "oklch(15.0% 0.0008 264.5)",
+          "oklch(26.4% 0.0014 264.5)",
+          "oklch(37.9% 0.0020 264.5)",
+          "oklch(49.3% 0.0026 264.5)",
+          "oklch(60.7% 0.0026 264.5)",
+          "oklch(72.1% 0.0020 264.5)",
+          "oklch(83.6% 0.0014 264.5)",
+          "oklch(95.0% 0.0008 264.5)"
+        ]
+      },
+      "card-mist": {
+        "role": "neutral",
+        "displayName": "Card Mist",
+        "tonalRamp": [
+          "oklch(15.0% 0.0016 264.5)",
+          "oklch(26.4% 0.0028 264.5)",
+          "oklch(37.9% 0.0040 264.5)",
+          "oklch(49.3% 0.0052 264.5)",
+          "oklch(60.7% 0.0052 264.5)",
+          "oklch(72.1% 0.0040 264.5)",
+          "oklch(83.6% 0.0028 264.5)",
+          "oklch(95.0% 0.0016 264.5)"
+        ]
+      },
+      "body-slate": {
+        "role": "neutral",
+        "displayName": "Body Slate",
+        "tonalRamp": [
+          "oklch(15.0% 0.0072 256.8)",
+          "oklch(26.4% 0.0126 256.8)",
+          "oklch(37.9% 0.0181 256.8)",
+          "oklch(49.3% 0.0236 256.8)",
+          "oklch(60.7% 0.0236 256.8)",
+          "oklch(72.1% 0.0181 256.8)",
+          "oklch(83.6% 0.0126 256.8)",
+          "oklch(95.0% 0.0072 256.8)"
+        ]
+      },
+      "heading-slate": {
+        "role": "neutral",
+        "displayName": "Heading Slate",
+        "tonalRamp": [
+          "oklch(15.0% 0.0084 259.7)",
+          "oklch(26.4% 0.0147 259.7)",
+          "oklch(37.9% 0.0211 259.7)",
+          "oklch(49.3% 0.0274 259.7)",
+          "oklch(60.7% 0.0274 259.7)",
+          "oklch(72.1% 0.0211 259.7)",
+          "oklch(83.6% 0.0147 259.7)",
+          "oklch(95.0% 0.0084 259.7)"
+        ]
+      },
+      "quiet-slate": {
+        "role": "neutral",
+        "displayName": "Quiet Slate",
+        "tonalRamp": [
+          "oklch(15.0% 0.0064 264.4)",
+          "oklch(26.4% 0.0112 264.4)",
+          "oklch(37.9% 0.0161 264.4)",
+          "oklch(49.3% 0.0209 264.4)",
+          "oklch(60.7% 0.0209 264.4)",
+          "oklch(72.1% 0.0161 264.4)",
+          "oklch(83.6% 0.0112 264.4)",
+          "oklch(95.0% 0.0064 264.4)"
+        ]
+      },
+      "foreground-navy": {
+        "role": "neutral",
+        "displayName": "Foreground Navy",
+        "canonical": "hsl(222.2 47.4% 11.2%)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0109 265.8)",
+          "oklch(26.4% 0.0191 265.8)",
+          "oklch(37.9% 0.0274 265.8)",
+          "oklch(49.3% 0.0357 265.8)",
+          "oklch(60.7% 0.0357 265.8)",
+          "oklch(72.1% 0.0274 265.8)",
+          "oklch(83.6% 0.0191 265.8)",
+          "oklch(95.0% 0.0109 265.8)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "hsl(214.3 31.8% 91.4%)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0034 255.5)",
+          "oklch(26.4% 0.0061 255.5)",
+          "oklch(37.9% 0.0087 255.5)",
+          "oklch(49.3% 0.0113 255.5)",
+          "oklch(60.7% 0.0113 255.5)",
+          "oklch(72.1% 0.0087 255.5)",
+          "oklch(83.6% 0.0061 255.5)",
+          "oklch(95.0% 0.0034 255.5)"
+        ]
+      },
+      "dark-slate": {
+        "role": "neutral",
+        "displayName": "Dark Slate",
+        "tonalRamp": [
+          "oklch(15.0% 0.0087 264.7)",
+          "oklch(26.4% 0.0153 264.7)",
+          "oklch(37.9% 0.0219 264.7)",
+          "oklch(49.3% 0.0285 264.7)",
+          "oklch(60.7% 0.0285 264.7)",
+          "oklch(72.1% 0.0219 264.7)",
+          "oklch(83.6% 0.0153 264.7)",
+          "oklch(95.0% 0.0087 264.7)"
+        ]
+      },
+      "rule-grey": {
+        "role": "neutral",
+        "displayName": "Rule Grey",
+        "tonalRamp": [
+          "oklch(15.0% 0.0052 261.3)",
+          "oklch(26.4% 0.0092 261.3)",
+          "oklch(37.9% 0.0132 261.3)",
+          "oklch(49.3% 0.0172 261.3)",
+          "oklch(60.7% 0.0172 261.3)",
+          "oklch(72.1% 0.0132 261.3)",
+          "oklch(83.6% 0.0092 261.3)",
+          "oklch(95.0% 0.0052 261.3)"
+        ]
+      },
+      "footer-silver": {
+        "role": "neutral",
+        "displayName": "Footer Silver",
+        "tonalRamp": [
+          "oklch(15.0% 0.0025 258.3)",
+          "oklch(26.4% 0.0045 258.3)",
+          "oklch(37.9% 0.0064 258.3)",
+          "oklch(49.3% 0.0084 258.3)",
+          "oklch(60.7% 0.0084 258.3)",
+          "oklch(72.1% 0.0064 258.3)",
+          "oklch(83.6% 0.0045 258.3)",
+          "oklch(95.0% 0.0025 258.3)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page titles above a thin rule."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Home and Services section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Class card names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Home paragraphs."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase navigation."
+      }
+    },
+    "shadows": [
+      {
+        "name": "review-card",
+        "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "purpose": "Lifts each Review from the Soft Mist band."
+      },
+      {
+        "name": "overlay",
+        "value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+        "purpose": "The mobile menu and the Portfolio lightbox."
+      },
+      {
+        "name": "lightbox-control",
+        "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+        "purpose": "The round previous, next and close buttons."
+      }
+    ],
+    "motion": [
+      {
+        "name": "nav",
+        "value": "200ms",
+        "purpose": "Navigation text color and underline."
+      },
+      {
+        "name": "button",
+        "value": "300ms",
+        "purpose": "Button scale on hover."
+      },
+      {
+        "name": "card",
+        "value": "500ms ease-in-out",
+        "purpose": "Class card lift and Service card frame."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Bookings and enquiries.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Reservar</a>",
+      "css": ".ds-btn-primary{font-family:Rubik,sans-serif;display:inline-block;background:#000;color:#fff;border-radius:.375rem;padding:.5rem 2rem;font-size:1.25rem;line-height:1.75rem;text-transform:uppercase;text-decoration:none;transition:all .3s}.ds-btn-primary:hover{transform:scale(1.1)}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Navigation such as \"Más info\".",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Más info</a>",
+      "css": ".ds-btn-secondary{font-family:Rubik,sans-serif;display:inline-block;background:#404040;color:#fff;border-radius:.375rem;padding:.5rem 2rem;font-weight:200;text-transform:uppercase;text-decoration:none;transition:all .3s}.ds-btn-secondary:hover{transform:scale(1.1)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header links over Studio Graphite.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Servicios<span></span></a><a class=\"ds-nav-link ds-active\" aria-current=\"page\" href=\"#\">Clases<span></span></a></nav>",
+      "css": ".ds-nav{font-family:Rubik,sans-serif;display:flex;gap:4rem;background:#525252;padding:1rem 2rem}.ds-nav-link{display:flex;flex-direction:column;align-items:center;color:#f3f4f6;font-size:1.125rem;font-weight:500;text-transform:uppercase;text-decoration:none;transition:color .2s}.ds-nav-link span{height:2px;width:0;background:#000;transition:width .2s}.ds-nav-link:hover,.ds-active{color:#000}.ds-nav-link:hover span,.ds-active span{width:100%}.ds-nav-link:focus-visible{outline:2px solid #fff;outline-offset:4px}"
+    },
+    {
+      "name": "Page Title",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Bold page title above a thin rule.",
+      "html": "<div class=\"ds-page-title\"><h1>Clases</h1></div>",
+      "css": ".ds-page-title{font-family:Rubik,sans-serif;border-bottom:1px solid #525252;padding:3rem 0 1.5rem}.ds-page-title h1{margin:0;font-size:2.25rem;line-height:2.5rem;font-weight:700;letter-spacing:-.025em;color:#000}"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "Portrait image with a caption band and a frame drawn on hover.",
+      "html": "<a class=\"ds-service\" href=\"#\"><div class=\"ds-service-img\"></div><h2>Maquillaje <b>Social</b></h2></a>",
+      "css": ".ds-service{font-family:Rubik,sans-serif;display:block;width:16rem;background:#404040;text-decoration:none}.ds-service-img{position:relative;aspect-ratio:5/6;background:linear-gradient(160deg,#d4d4d4,#737373);overflow:hidden}.ds-service-img::before,.ds-service-img::after{content:'';position:absolute;width:0;height:0;transition:all .5s ease-in-out}.ds-service-img::before{right:1rem;bottom:1rem;border-right:1px solid #fff;border-bottom:1px solid #fff}.ds-service-img::after{top:1rem;left:1rem;border-top:1px solid #fff;border-left:1px solid #fff}.ds-service:hover .ds-service-img::before,.ds-service:hover .ds-service-img::after{width:calc(100% - 32px);height:calc(100% - 32px)}.ds-service h2{margin:0;padding:1rem;text-align:center;font-size:1.25rem;font-weight:200;letter-spacing:.025em;color:#fff}.ds-service b{font-weight:600}"
+    },
+    {
+      "name": "Class Card",
+      "kind": "card",
+      "refersTo": "class-card",
+      "description": "Class summary that rises on hover, with its button linking the whole card.",
+      "html": "<article class=\"ds-class\"><div class=\"ds-class-img\"></div><div class=\"ds-class-body\"><h3>Automaquillaje individual</h3><ul><li><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m4.5 12.75 6 6 9-13.5\"/></svg>Preparación de la piel</li></ul><a href=\"#\">Consultar</a></div></article>",
+      "css": ".ds-class{font-family:Rubik,sans-serif;width:20rem;background:#e5e7eb;border-radius:.5rem .5rem 0 0;color:#0f172a;transition:all .5s}.ds-class:hover{transform:translateY(-1rem)}.ds-class-img{height:10rem;border-radius:.5rem .5rem 0 0;background:linear-gradient(160deg,#d4d4d4,#737373)}.ds-class-body{padding:1rem}.ds-class h3{margin:0 0 1rem;text-align:center;font-size:1.5rem;font-weight:300}.ds-class ul{margin:0;padding:0 0 1rem;list-style:none;border-bottom:1px solid #9ca3af}.ds-class li{display:flex;align-items:center;gap:.5rem}.ds-class svg{color:#be123c}.ds-class a{display:block;margin-top:1.5rem;background:#000;color:#fff;border-radius:.375rem;padding:.5rem 2rem;text-align:center;font-size:1.25rem;text-transform:uppercase;text-decoration:none}.ds-class a:focus-visible{outline:2px solid #000;outline-offset:4px}"
+    },
+    {
+      "name": "Review Card",
+      "kind": "card",
+      "refersTo": "review-card",
+      "description": "A Review from Google, the only resting card with a shadow.",
+      "html": "<figure class=\"ds-review\"><blockquote>“Maravilloso trabajo.”</blockquote><a href=\"#\">Leer en Google Maps</a><figcaption>Nombre de la clienta</figcaption></figure>",
+      "css": ".ds-review{font-family:Rubik,sans-serif;margin:0;width:20rem;display:flex;flex-direction:column;background:#fff;border-radius:1rem;padding:1.5rem;box-shadow:0 10px 15px -3px rgb(0 0 0/.1),0 4px 6px -4px rgb(0 0 0/.1),0 0 0 1px rgb(17 24 39/.05)}.ds-review blockquote{margin:0 0 .75rem;font-size:.875rem;color:#111827}.ds-review a{margin-bottom:1.5rem;font-size:.875rem;font-weight:500;color:#4b5563;text-underline-offset:2px}.ds-review a:hover{color:#000}.ds-review figcaption{border-top:1px solid rgb(17 24 39/.1);padding-top:1.5rem;font-size:.875rem;font-weight:600}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Monochrome Studio",
+    "overview": "**Creative North Star: \"The Monochrome Studio\"**\n\nThe site behaves like a makeup studio shot in black and white: ordered, professional and free of distractions. Graphite bands close the top and bottom of every page, white and pale grey surfaces hold the content, and the only rich color on screen comes from photographs of faces. The result is sober and professional. It builds trust and hands the leading role to the Artist's work.\n\nDensity is relaxed on content pages and generous around images. Rubik carries all the text, and the handwritten signature in the logo is the only personal flourish. Depth is rare, motion is short and appears mostly on hover.\n\nThis document describes the design as implemented. Known inconsistencies are listed under **Do's and Don'ts** as debts: they are part of the current site but shouldn't be copied into new work.",
+    "keyCharacteristics": [
+      "Greyscale interface, with color coming from the photographs.",
+      "Graphite header and footer framing every page.",
+      "One typeface, Rubik, from extra light to bold.",
+      "Mostly flat surfaces, with shadows reserved for Review cards and overlays.",
+      "Large photographs of faces, some of them in black and white."
+    ],
+    "rules": [
+      {
+        "name": "The Color Comes From Faces Rule",
+        "body": "The interface stays neutral so that skin, lips and eye makeup are the most saturated things on screen. Lipstick Rose appears only as tiny check marks.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Typeface Rule",
+        "body": "Rubik is the only typeface in the interface, apart from the Roboto that Google requires in the Maps attribution. The handwritten look belongs to the logo artwork, not to a font.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Service cards, Class cards, buttons and page bands have no shadow. A new shadow has to justify itself as a card on a tinted band or as an overlay.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the interface greyscale and let photographs supply the color.",
+      "Do frame every page with the Studio Graphite header and footer.",
+      "Do use primary buttons for Bookings and enquiries, and secondary buttons for navigation.",
+      "Do use Rubik for all text, changing weight to create hierarchy.",
+      "Do keep the Google Maps attribution in its required grey and Roboto."
+    ],
+    "donts": [
+      "Don't copy the black active and hover state of the navigation onto Studio Graphite: it has a contrast of only 2.69:1. This is a current debt.",
+      "Don't treat the black signature in the logo as an acceptable contrast pattern. On Studio Graphite it also reaches only 2.69:1, so it is hard to read. This is a current debt.",
+      "Don't use extra light weight for long text. Body paragraphs in weight 200 are thin to read. This is a current debt.",
+      "Don't add more heading styles. Section headings currently mix extra light, light uppercase and bold treatments. This is a current debt.",
+      "Don't introduce another card shape. Service, Class, Review and Portfolio each have different corners today. This is a current debt.",
+      "Don't mix more neutral families. The code uses `neutral`, `gray` and a blue-tinted foreground side by side. This is a current debt.",
+      "Don't leave calls to action without a designed focus state. Buttons and Service cards rely on the browser's default, while navigation, footer links and Portfolio tiles have a 2px outline. This is a current debt."
+    ]
+  }
+}
