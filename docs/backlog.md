@@ -31,13 +31,12 @@ A redesign of the site is planned after the migration. Several items below are b
 
 ## AI assistants and agents
 
-From [docs/research/llm-agents.md](./research/llm-agents.md), where each item is explained with its sources. IDs match the research's goals (O1 and O6 are done, O8 was discarded). Booking tools return the messages from `src/data`, never free text from an agent.
+From [docs/research/llm-agents.md](./research/llm-agents.md), where each item is explained with its sources. IDs match the research's goals (O1, O4 and O6 are done, O8 was discarded). Booking tools return the messages from `src/data`, never free text from an agent.
 
 | #   | Item                                                                                                                                                                                           | Priority | Effort |
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
 | A2  | Keep the Google Business Profile consistent with `src/data/contact-details.ts`, and claim Bing Places and Apple Business Connect. Register the site in Bing Webmaster Tools. Needs the Artist. | P1       | S      |
 | A3  | Measure AI assistant visits and crawler hits: a Vercel Firewall log rule per AI user agent, the Referrers panel and a WhatsApp click event. Depends on L1.                                     | P1       | S      |
-| A4  | Key facts as visible HTML on every Service and Class page (what, duration, where, how to book), clearly labelled `<a href>` Booking links and the phone number as text. Fits with C1/C8.       | P2       | S      |
 | A5  | JSON-LD for each Service and Class (`Service` with `provider` and `areaServed`) and `openingHoursSpecification` as an array. No reviews; prices only after C2.                                 | P2       | M      |
 | A7  | `llms.txt` generated from `src/data`. Unproven: remove it if A3 shows no requests within 3 months.                                                                                             | P3       | S      |
 | A9  | WebMCP experiment: register a `build_booking_link` tool on the page (Client Component, no backend). Draft API in a Chrome origin trial; check its status first. After A4.                      | P3       | S      |

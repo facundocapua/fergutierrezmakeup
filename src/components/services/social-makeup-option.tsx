@@ -1,3 +1,4 @@
+import { BookingDetails } from '@/components/booking-details'
 import { ButtonLink } from '@/components/button-link'
 import { CheckIcon, ClockIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
@@ -53,7 +54,7 @@ export function SocialMakeupOption({
             'lg:col-start-1': align === 'right'
           })}
         >
-          <h3 className='font-medium text-gray-500'>{subtitle}</h3>
+          <p className='font-medium text-gray-500'>{subtitle}</p>
           <h2 className='mt-4 text-4xl font-semibold tracking-tight text-gray-900'>{name}</h2>
 
           <div className='my-4 flex items-center gap-2'>
@@ -73,8 +74,15 @@ export function SocialMakeupOption({
           ))}
 
           <div>
-            <ButtonLink href={bookingHref}>Reservar</ButtonLink>
+            <ButtonLink href={bookingHref} aria-label={`Reservar ${name} por WhatsApp`}>
+              Reservar
+            </ButtonLink>
           </div>
+          <BookingDetails
+            where='En el estudio o a domicilio, con distintos honorarios'
+            bookingHref={bookingHref}
+            bookingLabel={`Reservar ${name}`}
+          />
         </div>
       </div>
     </article>

@@ -119,7 +119,7 @@ Formato como `docs/backlog.md`. Prioridad: P1 hacer pronto, P2 valioso, P3 opcio
 | O1  | Los rastreadores de búsqueda IA pueden leer todo el sitio y hay una política explícita de entrenamiento (**hecho**) | P1        | S        |
 | O2  | Perfiles de negocio coherentes con el sitio (Google, Bing, Apple)                                                   | P1        | S        |
 | O3  | Saber si llegan visitas y rastreos desde asistentes                                                                 | P1        | S-M      |
-| O4  | Los hechos clave están en HTML visible y un agente de navegación puede iniciar el Booking                           | P2        | S        |
+| O4  | Los hechos clave están en HTML visible y un agente de navegación puede iniciar el Booking (**hecho**)               | P2        | S        |
 | O5  | JSON-LD completo para Services y Classes                                                                            | P2        | M        |
 | O6  | Link de WhatsApp robusto y con prueba (**hecho**)                                                                   | P2        | S        |
 | O7  | `llms.txt` y versiones Markdown generadas desde `src/data`                                                          | P3        | S        |
@@ -154,6 +154,7 @@ Formato como `docs/backlog.md`. Prioridad: P1 hacer pronto, P2 valioso, P3 opcio
 - **Qué hacer**: comprobar que cada página de Service y de Class muestra en texto: qué es, duración, sesiones, lugar (estudio/domicilio, presencial/online), zona, horario y cómo reservar; que los CTA son `<a href>` reales (no `onClick`) con nombre accesible claro ("Reservar Maquillaje Social por WhatsApp"); que el número aparece también como texto. Un solo `h1` por página y listas reales para las listas. Aprovechar la revisión de contenido C1/C7/C8 del backlog.
 - **Verificar**: `curl` de cada página sin JS y comprobar que el contenido y los `href` están; prueba manual con Claude in Chrome o ChatGPT agent pidiendo "reserva una clase de automaquillaje" y observar que llega al link correcto.
 - **Dependencias**: copia final (C1, C8).
+- **Estado (2026-11-14)**: hecho. `src/components/booking-details.tsx` muestra en cada página de Service y en `/clases` dónde (estudio o domicilio; presencial u online), el horario y el número de WhatsApp como texto enlazado al Booking, todo derivado de `src/data`. Los CTA tienen nombre accesible con el Service ("Reservar Maquillaje eventos por WhatsApp"). Sin datos nuevos: falta la duración del Diseño de cejas (C6) y la copia final (C1, C8). Pendiente: la prueba manual con un agente de navegación.
 
 ### O5: JSON-LD completo para Services y Classes (P2, M)
 

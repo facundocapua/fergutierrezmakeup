@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Breadcrumb } from '@/components/breadcrumb'
+import { BookingDetails } from '@/components/booking-details'
 import { ClassesList } from '@/components/classes/classes-list'
 import { buildPageMetadata } from '@/lib/metadata'
+import { WHATSAPP_CHAT_URL } from '@/lib/whatsapp'
 import { SectionTitle } from '@/components/section-title'
 
 export const metadata: Metadata = buildPageMetadata({
@@ -19,6 +21,13 @@ export default function ClassesPage() {
       </div>
       <SectionTitle>Clases</SectionTitle>
       <ClassesList />
+      <div className='mx-auto mb-12 max-w-lg lg:max-w-7xl'>
+        <BookingDetails
+          where='Presenciales en el estudio u online'
+          bookingHref={WHATSAPP_CHAT_URL}
+          bookingLabel='Consultar por las clases'
+        />
+      </div>
     </main>
   )
 }
