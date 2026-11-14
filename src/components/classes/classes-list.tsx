@@ -1,5 +1,4 @@
 import { CLASSES } from '@/data/classes'
-import { CONTACT_DETAILS } from '@/data/contact-details'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
 import { ClassCard } from './class-card'
 
@@ -13,7 +12,7 @@ export function ClassesList() {
               key={makeupClass.name}
               {...makeupClass}
               isLcp={index === 0}
-              enquiryHref={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, whatsAppMessage)}
+              enquiryHref={buildWhatsAppLink(whatsAppMessage)}
             />
           ))}
         </div>

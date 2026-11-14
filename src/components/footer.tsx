@@ -1,6 +1,7 @@
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { CONTACT_DETAILS } from '@/data/contact-details'
+import { WHATSAPP_CHAT_URL } from '@/lib/whatsapp'
 import { FacebookIcon } from './icons/facebook-icon'
 import { InstagramIcon } from './icons/instagram-icon'
 import { TikTokIcon } from './icons/tiktok-icon'
@@ -64,7 +65,7 @@ export function Footer() {
       </div>
 
       <Link
-        href={socialNetworks.whatsapp}
+        href={WHATSAPP_CHAT_URL}
         target='_blank'
         rel='noreferrer nofollow'
         className='fixed right-1 bottom-1 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black md:right-4 md:bottom-4 md:m-4'

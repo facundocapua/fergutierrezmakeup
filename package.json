@@ -18,7 +18,8 @@
     "parity:baseline": "PARITY_BASELINE=1 playwright test --update-snapshots",
     "parity": "playwright test",
     "images:optimize": "node scripts/optimize-images.mjs",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "test": "vitest run"
   },
   "dependencies": {
     "@headlessui/react": "2.2.10",
@@ -46,7 +47,8 @@
     "sharp": "0.35.5",
     "simple-git-hooks": "2.14.0",
     "tailwindcss": "4.3.3",
-    "typescript": "~6.0.3"
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"

@@ -1,4 +1,3 @@
-import { CONTACT_DETAILS } from '@/data/contact-details'
 import { SOCIAL_MAKEUP_OPTIONS } from '@/data/services'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
 import { SocialMakeupOption } from './social-makeup-option'
@@ -13,7 +12,7 @@ export function SocialMakeup() {
             {...option}
             align={index % 2 === 0 ? 'left' : 'right'}
             isLcp={index === 0}
-            bookingHref={buildWhatsAppLink(CONTACT_DETAILS.socialNetworks.whatsapp, whatsAppMessage)}
+            bookingHref={buildWhatsAppLink(whatsAppMessage)}
           />
         ))}
       </div>

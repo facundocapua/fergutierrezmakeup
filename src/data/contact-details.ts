@@ -17,7 +17,6 @@ export type ContactDetails = {
     facebook: string
     instagram: string
     tiktok: string
-    whatsapp: string
   }
 }
 
@@ -41,7 +40,6 @@ export const CONTACT_DETAILS: ContactDetails = {
   socialNetworks: {
     facebook: 'https://www.facebook.com/fernanda.gutierrez.makeup',
     instagram: 'https://www.instagram.com/fer.gutierrez.makeup/',
-    tiktok: 'https://www.tiktok.com/@fer.gutierrez.makeup',
-    whatsapp: 'https://wa.me/34623807060'
+    tiktok: 'https://www.tiktok.com/@fer.gutierrez.makeup'
   }
 }

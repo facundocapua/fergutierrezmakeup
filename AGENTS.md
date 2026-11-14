@@ -23,13 +23,14 @@ TypeScript and ESLint are deliberately pinned one major below latest (TS 7 / ESL
 pnpm dev            # dev server on :3000
 pnpm build          # production build
 pnpm lint           # ESLint (not run by `next build` in Next 16)
+pnpm test           # unit tests (Vitest, tests/unit/)
 pnpm typecheck      # route types + tsc
 pnpm format         # Prettier (also sorts Tailwind classes)
 pnpm images:optimize  # downscale/recompress images in public/ (run after adding photos)
 pnpm parity         # visual comparison against production (see docs/parity.md)
 ```
 
-CI (GitHub Actions) runs format check, lint and typecheck. Build and deploy are done by Vercel's GitHub integration. Each preview deployment is also compared visually with production ([docs/parity.md](./docs/parity.md)); a failure there is a diff to review, not necessarily a bug.
+CI (GitHub Actions) runs format check, lint, typecheck and unit tests. Build and deploy are done by Vercel's GitHub integration. Each preview deployment is also compared visually with production ([docs/parity.md](./docs/parity.md)); a failure there is a diff to review, not necessarily a bug.
 
 A pre-commit hook runs ESLint and Prettier on staged files (`simple-git-hooks` + `lint-staged`, installed by `pnpm install`). Dependabot opens weekly update PRs (`.github/dependabot.yml`).
 
