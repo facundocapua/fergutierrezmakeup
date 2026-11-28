@@ -29,26 +29,26 @@
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "server-only": "^0.0.1",
-    "tailwind-merge": "3.7.0"
+    "tailwind-merge": "3.7.1"
   },
   "devDependencies": {
-    "@playwright/test": "1.64.1",
-    "@tailwindcss/postcss": "4.3.3",
-    "@types/node": "^24.19.2",
-    "@types/react": "^19.3.0",
+    "@playwright/test": "1.65.1",
+    "@tailwindcss/postcss": "4.3.5",
+    "@types/node": "^24.19.3",
+    "@types/react": "^19.3.2",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.4.6",
     "eslint-config-prettier": "^10.1.8",
-    "lint-staged": "17.6.0",
-    "postcss": "^8.5.32",
-    "prettier": "3.9.10",
+    "lint-staged": "17.6.2",
+    "postcss": "^8.5.33",
+    "prettier": "3.10.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sharp": "0.35.5",
     "simple-git-hooks": "2.14.0",
-    "tailwindcss": "4.3.3",
+    "tailwindcss": "4.3.5",
     "typescript": "~6.0.3",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
