@@ -1,6 +1,7 @@
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { CONTACT_DETAILS } from '@/data/contact-details'
+import { bookingAttributes } from '@/lib/analytics'
 import { WHATSAPP_CHAT_URL } from '@/lib/whatsapp'
 import { FacebookIcon } from './icons/facebook-icon'
 import { InstagramIcon } from './icons/instagram-icon'
@@ -66,6 +67,7 @@ export function Footer() {
 
       <Link
         href={WHATSAPP_CHAT_URL}
+        {...bookingAttributes('Consulta general')}
         target='_blank'
         rel='noreferrer nofollow'
         className='fixed right-1 bottom-1 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black md:right-4 md:bottom-4 md:m-4'

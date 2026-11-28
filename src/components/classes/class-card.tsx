@@ -2,6 +2,7 @@ import { ButtonLink } from '@/components/button-link'
 import { BookOpenIcon, CheckIcon, ClockIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import type { MakeupClass } from '@/data/classes'
+import { bookingAttributes } from '@/lib/analytics'
 
 type Props = Omit<MakeupClass, 'whatsAppMessage'> & {
   enquiryHref: string
@@ -75,6 +76,7 @@ export function ClassCard({
           target='_blank'
           rel='noopener noreferrer'
           aria-label={`Consultar por ${name} por WhatsApp`}
+          {...bookingAttributes(name)}
           className='w-full text-center after:absolute after:inset-0 after:rounded-t-lg hover:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black'
         >
           Consultar

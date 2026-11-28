@@ -4,6 +4,7 @@ import { CheckIcon, ClockIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
 import type { SocialMakeupOption as Option } from '@/data/services'
+import { bookingAttributes } from '@/lib/analytics'
 
 type Props = Omit<Option, 'whatsAppMessage'> & {
   bookingHref: string
@@ -74,7 +75,7 @@ export function SocialMakeupOption({
           ))}
 
           <div>
-            <ButtonLink href={bookingHref} aria-label={`Reservar ${name} por WhatsApp`}>
+            <ButtonLink href={bookingHref} aria-label={`Reservar ${name} por WhatsApp`} {...bookingAttributes(name)}>
               Reservar
             </ButtonLink>
           </div>
@@ -82,6 +83,7 @@ export function SocialMakeupOption({
             where='En el estudio o a domicilio, con distintos honorarios'
             bookingHref={bookingHref}
             bookingLabel={`Reservar ${name}`}
+            booking={name}
           />
         </div>
       </div>

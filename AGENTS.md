@@ -37,8 +37,9 @@ A pre-commit hook runs ESLint and Prettier on staged files (`simple-git-hooks` +
 ## Conventions
 
 - **Code is in English; visible UI copy is in Spanish.** Name things with the GLOSSARY terms (`Studio`, `Service`, `Class`, `Booking`, `Quote`…), never with the legacy e-commerce names (`Salon`, `Store`, `Course`, `Product`).
-- All content is code: Contact Details, Services, Classes, Brands and Portfolio live in `src/data/`. There is no backend or CMS (see ADR 0001). The only runtime dependency is Google Places API (New) for Reviews (`src/lib/google-reviews.ts`). Reviews are cached and the home page regenerated at most once a day; this deliberately goes beyond Google's no-caching terms for speed and cost, as decided by the owner. Keep the Google Maps attribution in the Reviews section.
-- Pages are Server Components and static. Only the header (mobile menu) and the Portfolio lightbox are Client Components.
+- All content is code: Contact Details, Services, Classes, Brands and Portfolio live in `src/data/`. There is no backend or CMS (see ADR 0001). The runtime dependencies are Google Places API (New) for Reviews (`src/lib/google-reviews.ts`) and Pirsch for cookieless analytics (`src/components/analytics.tsx`, see [docs/research/analytics.md](./docs/research/analytics.md)). Reviews are cached and the home page regenerated at most once a day; this deliberately goes beyond Google's no-caching terms for speed and cost, as decided by the owner. Keep the Google Maps attribution in the Reviews section.
+- Pages are Server Components and static. Only the header (mobile menu), the Portfolio lightbox and `BookingClickTracker` (analytics) are Client Components.
+- Every WhatsApp link carries `bookingAttributes(<Service or Class>)` (`src/lib/analytics.ts`) so its clicks are measured. Never send the message text to analytics.
 - Mark only the largest above-the-fold image of each page with `loading='eager'` + `fetchPriority='high'` (`priority` is deprecated in Next 16), and give every `next/image` an accurate `sizes`.
 - Use `ButtonLink` for calls to action: `primary` (default, black) for Bookings and enquiries, `secondary` (grey) for navigation such as "Más info".
 - Every indexable page sets its title, description and canonical with `buildPageMetadata` (`src/lib/metadata.ts`).
@@ -47,10 +48,11 @@ A pre-commit hook runs ESLint and Prettier on staged files (`simple-git-hooks` +
 
 ## React Compiler
 
-It is **intentionally off**: today the site has only two small Client Components, so it would add build cost for no gain. **Turn it on (`reactCompiler: true` in `next.config.ts` + `babel-plugin-react-compiler`) as soon as the site becomes meaningfully interactive**, for example in the planned revamp. The `react-hooks` lint rules already enforce compiler-compatible code.
+It is **intentionally off**: today the site has only three small Client Components, so it would add build cost for no gain. **Turn it on (`reactCompiler: true` in `next.config.ts` + `babel-plugin-react-compiler`) as soon as the site becomes meaningfully interactive**, for example in the planned revamp. The `react-hooks` lint rules already enforce compiler-compatible code.
 
 ## Environment variables
 
-| Name             | Where                | Purpose                                                                            |
-| ---------------- | -------------------- | ---------------------------------------------------------------------------------- |
-| `GOOGLE_API_KEY` | Vercel, `.env.local` | Google Places API key for Reviews. Without it the Reviews section is not rendered. |
+| Name             | Where                | Purpose                                                                                          |
+| ---------------- | -------------------- | ------------------------------------------------------------------------------------------------ |
+| `GOOGLE_API_KEY` | Vercel, `.env.local` | Google Places API key for Reviews. Without it the Reviews section is not rendered.               |
+| `PIRSCH_CODE`    | Vercel (Production)  | Pirsch identification code. Analytics load only when it is set and `VERCEL_ENV` is `production`. |

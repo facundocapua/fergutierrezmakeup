@@ -3,6 +3,7 @@ import { ButtonLink } from '@/components/button-link'
 import browDesignImage from '@public/services/3.jpg'
 import Image from 'next/image'
 import { BROW_DESIGN_WHATSAPP_MESSAGE } from '@/data/services'
+import { bookingAttributes } from '@/lib/analytics'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
 
 export function BrowDesign() {
@@ -37,6 +38,7 @@ export function BrowDesign() {
             <ButtonLink
               href={buildWhatsAppLink(BROW_DESIGN_WHATSAPP_MESSAGE)}
               aria-label='Solicitar turno de diseño de cejas por WhatsApp'
+              {...bookingAttributes('Diseño de cejas')}
             >
               solicitar turno
             </ButtonLink>
@@ -45,6 +47,7 @@ export function BrowDesign() {
             where='En el estudio o a domicilio, con distintos honorarios'
             bookingHref={buildWhatsAppLink(BROW_DESIGN_WHATSAPP_MESSAGE)}
             bookingLabel='Solicitar turno de diseño de cejas'
+            booking='Diseño de cejas'
           />
         </div>
       </div>

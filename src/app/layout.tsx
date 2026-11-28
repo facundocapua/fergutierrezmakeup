@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Rubik } from 'next/font/google'
 import type { ReactNode } from 'react'
+import { Analytics } from '@/components/analytics'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { SITE_DESCRIPTION, SITE_LOCALE, SITE_NAME, SITE_TITLE, SITE_URL } from '@/lib/site'
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   )

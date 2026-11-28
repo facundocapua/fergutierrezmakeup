@@ -3,6 +3,7 @@ import { ButtonLink } from '@/components/button-link'
 import bridalMakeupImage from '@public/services/5.webp'
 import Image from 'next/image'
 import { BRIDAL_MAKEUP_WHATSAPP_MESSAGE } from '@/data/services'
+import { bookingAttributes } from '@/lib/analytics'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
 
 export function BridalMakeup() {
@@ -39,6 +40,7 @@ export function BridalMakeup() {
             <ButtonLink
               href={buildWhatsAppLink(BRIDAL_MAKEUP_WHATSAPP_MESSAGE)}
               aria-label='Solicitar presupuesto de maquillaje de novias por WhatsApp'
+              {...bookingAttributes('Maquillaje de novias')}
             >
               solicitar presupuesto
             </ButtonLink>
@@ -47,6 +49,7 @@ export function BridalMakeup() {
             where='En el estudio o a domicilio, con coste adicional'
             bookingHref={buildWhatsAppLink(BRIDAL_MAKEUP_WHATSAPP_MESSAGE)}
             bookingLabel='Solicitar presupuesto de maquillaje de novias'
+            booking='Maquillaje de novias'
           />
         </div>
       </div>

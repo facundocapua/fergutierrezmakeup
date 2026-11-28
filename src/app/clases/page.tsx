@@ -26,6 +26,7 @@ export default function ClassesPage() {
           where='Presenciales en el estudio u online'
           bookingHref={WHATSAPP_CHAT_URL}
           bookingLabel='Consultar por las clases'
+          booking='Clases'
         />
       </div>
     </main>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { CONTACT_DETAILS } from '@/data/contact-details'
+import { bookingAttributes } from '@/lib/analytics'
 
 const WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 const DAY_NAMES = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
@@ -24,6 +25,8 @@ type Props = {
   bookingHref: string
   /** Accessible name of the phone link, naming what it books. */
   bookingLabel: string
+  /** What the link books, sent with the WhatsApp click event. */
+  booking: string
 }
 
 /**
@@ -31,7 +34,7 @@ type Props = {
  * People skim it, and AI assistants and agents read it without running JavaScript
  * (docs/research/llm-agents.md, O4).
  */
-export function BookingDetails({ where, bookingHref, bookingLabel }: Props) {
+export function BookingDetails({ where, bookingHref, bookingLabel, booking }: Props) {
   return (
     <dl className='mt-10 grid grid-cols-1 gap-x-6 gap-y-1 border-t border-gray-300 pt-6 text-gray-700 sm:grid-cols-[auto_1fr] sm:gap-y-3'>
       <dt className='font-semibold text-gray-900'>Dónde</dt>
@@ -45,6 +48,7 @@ export function BookingDetails({ where, bookingHref, bookingLabel }: Props) {
         Por WhatsApp al{' '}
         <Link
           href={bookingHref}
+          {...bookingAttributes(booking)}
           target='_blank'
           rel='noopener noreferrer'
           aria-label={`${bookingLabel} por WhatsApp al ${phone}`}
