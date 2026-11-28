@@ -11,6 +11,11 @@ import { Logo } from './logo'
 
 const { email, phone, phoneE164, address, city, state, mapLink, socialNetworks } = CONTACT_DETAILS
 
+const LEGAL_PAGES = [
+  { name: 'Aviso legal', href: '/aviso-legal' },
+  { name: 'Política de privacidad', href: '/privacidad' }
+]
+
 const SOCIAL_PROFILES = [
   { name: 'Facebook', href: socialNetworks.facebook, icon: FacebookIcon },
   { name: 'Instagram', href: socialNetworks.instagram, icon: InstagramIcon },
@@ -62,7 +67,17 @@ export function Footer() {
             </Link>
           ))}
         </div>
-        <div className='mt-8 md:order-1 md:mt-0'></div>
+        <nav aria-label='Información legal' className='mt-8 flex justify-center gap-6 text-sm md:order-1 md:mt-0'>
+          {LEGAL_PAGES.map((page) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className='rounded-sm text-gray-300 underline-offset-4 hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+            >
+              {page.name}
+            </Link>
+          ))}
+        </nav>
       </div>
 
       <Link

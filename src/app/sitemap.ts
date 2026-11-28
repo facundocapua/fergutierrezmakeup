@@ -8,7 +8,9 @@ const ROUTES: Array<{ path: string; priority: number; changeFrequency: 'weekly' 
   { path: '/servicios/novias', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/servicios/cejas', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/clases', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/portfolio', priority: 0.8, changeFrequency: 'monthly' }
+  { path: '/portfolio', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/aviso-legal', priority: 0.2, changeFrequency: 'monthly' },
+  { path: '/privacidad', priority: 0.2, changeFrequency: 'monthly' }
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
