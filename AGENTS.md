@@ -13,7 +13,7 @@ It presents her Services and Classes and sends every booking or enquiry to Whats
 
 ## Stack
 
-Next.js 16 (App Router, Turbopack), React 19, TypeScript 6 (strict), Tailwind CSS 4 (CSS-first config in `src/app/globals.css`, no `tailwind.config`), ESLint 9 + Prettier, pnpm, Node 24. Hosted on Vercel.
+Next.js 16 (App Router, Turbopack), React 19, TypeScript 6 (strict), Tailwind CSS 4 (CSS-first config in `src/app/globals.css`, no `tailwind.config`), ESLint 9 + Prettier, pnpm, Node 24. Hosted on Vercel, behind Cloudflare (DNS proxy). Cloudflare's AI bot settings can rewrite `robots.txt` and block crawlers regardless of `src/app/robots.ts`; they are set to allow everything (see docs/research/llm-agents.md, O1).
 
 TypeScript and ESLint are deliberately pinned one major below latest (TS 7 / ESLint 10) because `eslint-config-next` doesn't support them yet. Don't upgrade them without checking that.
 

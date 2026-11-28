@@ -133,6 +133,7 @@ Formato como `docs/backlog.md`. Prioridad: P1 hacer pronto, P2 valioso, P3 opcio
 - **Verificar**: `curl -s https://www.fernandagutierrez.es/robots.txt`; `curl -A "OAI-SearchBot/1.4" -I` a cada ruta del sitemap devuelve 200; el reflejo de cambios en OpenAI tarda ~24 h.
 - **Dependencias**: decisión del dueño sobre entrenamiento.
 - **Estado (2026-11-14)**: hecho. Se permite también el entrenamiento, así que basta la regla `*` con `allow: /`; la decisión queda documentada en `src/app/robots.ts`. Pendiente fuera del repo: comprobar en Vercel que ninguna regla de Firewall desafía a estos bots.
+- **Cloudflare (2026-11-28)**: el dominio pasa por Cloudflare antes de Vercel. Su "AI Crawler and Agent access policies" tenía Training en Disallow: anteponía al `robots.txt` un bloque con `Content-Signal: ai-train=no` y `Disallow: /` para GPTBot, ClaudeBot, Google-Extended y otros, y respondía 403 a GPTBot, ClaudeBot y PerplexityBot. Se puso todo en Allow (Search, Agent y Training, y cada bot en AI Crawl Control); el `robots.txt` servido vuelve a ser el de `src/app/robots.ts` y esos bots reciben 200. Comprobar con `curl -A "Mozilla/5.0 (compatible; GPTBot/1.2)" -I` tras cualquier cambio en Cloudflare.
 
 ### O2: Perfiles de negocio coherentes con el sitio (P1, S)
 
