@@ -1,6 +1,6 @@
 # Backlog
 
-Improvements found during the migration (October 2026). None of them are implemented yet.
+Improvements found during the migration (October 2026) and in later reviews. Done items are removed; their notes live in the commits and in docs/research/.
 
 Priority: **P1** do soon (legal, broken or data loss), **P2** valuable, **P3** nice to have. Effort: S (hours), M (a day or two), L (more).
 
@@ -13,10 +13,9 @@ A redesign of the site is planned after the migration. Several items below are b
 
 ## Legal and compliance (Spain)
 
-| #   | Item                                                                                                                                                                                                                                                                                                         | Priority | Effort |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ------ |
-| L1  | **Analytics with consent.** Create a new GA4 property owned by the Artist, add it through a `NEXT_PUBLIC_GA_ID` env var (not loaded when unset), and add a cookie consent banner with Google Consent Mode v2 (default `denied`). GA was removed in the migration, so nothing is measured until this is done. | P1       | M      |
-| L2  | Add a legal notice ("Aviso legal") and a privacy policy that comply with LSSI-CE and GDPR, plus a cookie policy once L1 is done. Link them from the footer. The old e-commerce terms were removed.                                                                                                           | P1       | M      |
+| #   | Item                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Priority | Effort |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
+| L2  | Add a legal notice ("Aviso legal") and a privacy policy that comply with LSSI-CE and GDPR, and link them from the footer. The privacy policy must describe the Pirsch analytics (purpose, data, Pirsch as data processor, hosting in Germany, retention of at most 25 months): it is one of the AEPD conditions for measuring without a consent banner ([analytics research](./research/analytics.md)). No cookie policy is needed while nothing is stored on the device. Also sign Pirsch's data processing agreement and cap retention at 25 months in Pirsch. The old e-commerce terms were removed. | P1       | M      |
 
 ## Content
 
@@ -33,13 +32,13 @@ A redesign of the site is planned after the migration. Several items below are b
 
 From [docs/research/llm-agents.md](./research/llm-agents.md), where each item is explained with its sources. IDs match the research's goals (O1, O4 and O6 are done, O8 was discarded). Booking tools return the messages from `src/data`, never free text from an agent.
 
-| #   | Item                                                                                                                                                                                           | Priority | Effort |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| A2  | Keep the Google Business Profile consistent with `src/data/contact-details.ts`, and claim Bing Places and Apple Business Connect. Register the site in Bing Webmaster Tools. Needs the Artist. | P1       | S      |
-| A3  | Measure AI assistant visits and crawler hits: a Vercel Firewall log rule per AI user agent, the Referrers panel and a WhatsApp click event. Depends on L1.                                     | P1       | S      |
-| A5  | JSON-LD for each Service and Class (`Service` with `provider` and `areaServed`) and `openingHoursSpecification` as an array. No reviews; prices only after C2.                                 | P2       | M      |
-| A7  | `llms.txt` generated from `src/data`. Unproven: remove it if A3 shows no requests within 3 months.                                                                                             | P3       | S      |
-| A9  | WebMCP experiment: register a `build_booking_link` tool on the page (Client Component, no backend). Draft API in a Chrome origin trial; check its status first. After A4.                      | P3       | S      |
+| #   | Item                                                                                                                                                                                                                                                                                  | Priority | Effort |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
+| A2  | Keep the Google Business Profile consistent with `src/data/contact-details.ts`, and claim Bing Places and Apple Business Connect. Register the site in Bing Webmaster Tools. Needs the Artist.                                                                                        | P1       | S      |
+| A3  | Measure AI assistant visits and crawler hits: watch Pirsch's "AI" channel and referrers, and add one Vercel Firewall rule with a Log action for the AI user agents (crawlers never run the analytics script). Record which referrers actually show up in docs/research/llm-agents.md. | P1       | S      |
+| A5  | JSON-LD for each Service and Class (`Service` with `provider` and `areaServed`) and `openingHoursSpecification` as an array. No reviews; prices only after C2.                                                                                                                        | P2       | M      |
+| A7  | `llms.txt` generated from `src/data`. Unproven: remove it if A3 shows no requests within 3 months.                                                                                                                                                                                    | P3       | S      |
+| A9  | WebMCP experiment: register a `build_booking_link` tool on the page (Client Component, no backend). Draft API in a Chrome origin trial; check its status first. After A4.                                                                                                             | P3       | S      |
 
 ## Engineering
 
