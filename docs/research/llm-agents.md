@@ -120,7 +120,7 @@ Formato como `docs/backlog.md`. Prioridad: P1 hacer pronto, P2 valioso, P3 opcio
 | O2  | Perfiles de negocio coherentes con el sitio (Google, Bing, Apple)                                                   | P1        | S        |
 | O3  | Saber si llegan visitas y rastreos desde asistentes                                                                 | P1        | S-M      |
 | O4  | Los hechos clave están en HTML visible y un agente de navegación puede iniciar el Booking (**hecho**)               | P2        | S        |
-| O5  | JSON-LD completo para Services y Classes                                                                            | P2        | M        |
+| O5  | JSON-LD completo para Services y Classes (**hecho**)                                                                | P2        | M        |
 | O6  | Link de WhatsApp robusto y con prueba (**hecho**)                                                                   | P2        | S        |
 | O7  | `llms.txt` y versiones Markdown generadas desde `src/data`                                                          | P3        | S        |
 | O8  | ~~Servidor MCP remoto de solo lectura con herramienta de link de Booking~~ (**descartado**)                         | —         | —        |
@@ -163,6 +163,7 @@ Formato como `docs/backlog.md`. Prioridad: P1 hacer pronto, P2 valioso, P3 opcio
 - **Qué hacer**: en `src/lib/structured-data.ts`: (a) `openingHoursSpecification` como array y `opens`/`closes` en hh:mm:ss; (b) añadir `areaServed` (Costa del Sol / Benalmádena, Málaga) y `knowsAbout`/`hasOfferCatalog` apuntando por `@id` a cada Service y Class; (c) `buildServiceStructuredData` con `@type: Service`, `provider: { '@id': '/#studio' }`, `serviceType`, `areaServed`, `url`; usarlo en `/servicios/*` y para las Classes (`Service` con `serviceType` "Clase de maquillaje", o `Course` + `CourseInstance` con `courseMode` online/presencial, sabiendo que Google ya no muestra Course info: [aviso][google-course]); (d) **no** añadir `aggregateRating` ni `review` ([Review snippet][google-review]); (e) no inventar precios (`Offer` solo cuando se decida C2); (f) opcional y especulativo: `potentialAction` con `ContactAction`/`ReserveAction` y `EntryPoint` al link de WhatsApp ([ReserveAction][schema-reserve]). Derivar todo de `src/data` para evitar duplicar.
 - **Verificar**: validador de Rich Results / validador de schema.org; que `name`, `url` y `telephone` coincidan con la ficha de Google (O2).
 - **Dependencias**: decisión de precios (C2) si se quieren `Offer`.
+- **Estado (2026-11-28)**: hecho. `src/lib/structured-data.ts` genera un `Service` por página de Service y uno por Class (en `/clases`), con `provider` al Studio, `areaServed` (Benalmádena y provincia de Málaga) y `availableChannel` con el link de WhatsApp de cada página y el teléfono. El Studio tiene `openingHoursSpecification` como array, `areaServed` y un `hasOfferCatalog` que enlaza esos `Service` por `@id`. Sin precios ni reseñas; un test (`tests/unit/structured-data.test.ts`) lo comprueba. Se descartó `ReserveAction` por especulativo. Pendiente: pasar el validador de schema.org sobre producción.
 
 ### O6: Link de WhatsApp robusto y con prueba (P2, S)
 

@@ -2,7 +2,10 @@ import type { Metadata } from 'next'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { BookingDetails } from '@/components/booking-details'
 import { ClassesList } from '@/components/classes/classes-list'
+import { JsonLd } from '@/components/json-ld'
+import { CLASSES } from '@/data/classes'
 import { buildPageMetadata } from '@/lib/metadata'
+import { buildClassStructuredData } from '@/lib/structured-data'
 import { WHATSAPP_CHAT_URL } from '@/lib/whatsapp'
 import { SectionTitle } from '@/components/section-title'
 
@@ -16,6 +19,9 @@ export const metadata: Metadata = buildPageMetadata({
 export default function ClassesPage() {
   return (
     <main className='mt-4 mb-4 w-full px-4'>
+      {CLASSES.map((makeupClass) => (
+        <JsonLd key={makeupClass.name} data={buildClassStructuredData(makeupClass)} />
+      ))}
       <div className='mx-auto mb-4 max-w-7xl'>
         <Breadcrumb pages={[{ name: 'Clases', href: '/clases', current: true }]} />
       </div>
